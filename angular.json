@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "rns-v2"
+  "defaultProject": "rns-v2",
+  "cli": {
+    "analytics": "aba03337-0409-40d0-a0e1-f938280dce27"
+  }
 }
