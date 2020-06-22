@@ -1,20 +1,43 @@
+// Modules
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+// Angular Material
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+// Components
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './components/about/about.component';
+import { NavToolbarComponent } from './components/nav-toolbar/nav-toolbar.component';
+import { ServicesComponent } from './components/services/services.component';
+import { OurWorkComponent } from './components/our-work/our-work.component';
+import { ContactComponent } from './components/contact/contact.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent
+    HomeComponent,
+    SideNavComponent,
+    AboutComponent,
+    NavToolbarComponent,
+    ServicesComponent,
+    OurWorkComponent,
+    ContactComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,12 +11,7 @@ export class SideNavComponent {
 
   constructor() { }
 
-  reason = '';
-
-  close(reason: string) {
-    this.reason = reason;
+  close() {
     this.sidenav.close();
   }
-
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 }

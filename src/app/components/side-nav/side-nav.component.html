@@ -1,13 +1,15 @@
-<mat-sidenav-container
-    class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
-  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
-    <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
+<mat-sidenav-container (backdropClick)="close()" >
+
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav>
+    <a routerLink="/home">Home</a><br>
+    <a routerLink="/about">About</a>
   </mat-sidenav>
 
+  <!-- Main Content -->
   <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.open()">Open</button></p>
-    <p>Closed due to: {{reason}}</p>
+    <app-nav-toolbar></app-nav-toolbar>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
-</mat-sidenav-container>
 
-<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
+</mat-sidenav-container>
