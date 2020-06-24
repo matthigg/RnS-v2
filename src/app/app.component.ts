@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+
+// Angular Material
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rns-v2';
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  constructor() { }
+
+  close() {
+    this.sidenav.close();
+  }
 }

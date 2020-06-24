@@ -12,7 +12,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 // Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { NavToolbarComponent } from './components/nav-toolbar/nav-toolbar.component';
 import { ServicesComponent } from './components/services/services.component';
@@ -24,7 +23,6 @@ import { ContactComponent } from './components/contact/contact.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    SideNavComponent,
     AboutComponent,
     NavToolbarComponent,
     ServicesComponent,
