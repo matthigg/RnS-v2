@@ -8,7 +8,16 @@
 
   <!-- Main Content -->
   <mat-sidenav-content>
-    <div class="background-image blurred-image"></div>
+    <div [ngClass]="{ 
+      'background-image': true, 
+      'blurred-image': true,
+      'hide-image': fadeInBackgroundImage
+    }"></div>
+    <div [ngClass]="{ 
+      'background-image': true, 
+      'final-image': true,
+      'show-image': fadeInBackgroundImage
+    }"></div>
     <app-nav-toolbar></app-nav-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

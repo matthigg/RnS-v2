@@ -22,6 +22,7 @@ mat-sidenav-container {
     background-image: url($url576);
     filter: blur(4px);
     opacity: 1;
+    transition: 1s ease-in-out;
     &.hide-image {
       opacity: 0;
       transition: 1s ease-in-out;
@@ -29,6 +30,7 @@ mat-sidenav-container {
   }
   &.final-image {
     opacity: 0;
+    transition: 1s ease-in-out;
     &.show-image {
       opacity: 1;
       transition: 1s ease-in-out;

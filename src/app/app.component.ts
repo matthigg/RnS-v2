@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 
 // Angular Material
 import { MatSidenav } from '@angular/material/sidenav';
@@ -8,13 +8,18 @@ import { MatSidenav } from '@angular/material/sidenav';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'rns-v2';
+  fadeInBackgroundImage: boolean = false;
   @ViewChild('sidenav') sidenav: MatSidenav;
 
   constructor() { }
 
-  close() {
+  ngAfterViewInit() {
+    setTimeout(_ => { this.fadeInBackgroundImage = true });
+  }
+
+  close(): void {
     this.sidenav.close();
   }
 }
