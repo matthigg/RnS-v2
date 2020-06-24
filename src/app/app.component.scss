@@ -1,3 +1,9 @@
+$url576: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-576.webp';
+$url768: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-768.webp';
+$url992: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-992.webp';
+$url1200: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-1200.webp';
+$url1440: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-1440.webp';
+
 mat-sidenav-container {
   height: 100%;
 }
@@ -30,7 +36,6 @@ mat-sidenav-container {
   }
 }
 
-$url576: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-576.webp';
 @media (min-width: 0px) {
   .background-image.final-image.show-image {
     background-image:                   url($url576);
@@ -39,7 +44,6 @@ $url576: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-0
   }
 }
 
-$url768: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-768.webp';
 @media (min-width: 768px) {
   .background-image.final-image.show-image {
     background-image:                   url($url768);
@@ -48,7 +52,6 @@ $url768: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-0
   }
 }
 
-$url992: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-992.webp';
 @media (min-width: 992px) {
   .background-image.final-image.show-image {
     background-image:                   url($url992);
@@ -57,7 +60,6 @@ $url992: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-0
   }
 }
 
-$url1200: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-1200.webp';
 @media (min-width: 1200px) {
   .background-image.final-image.show-image {
     background-image:                   url($url1200);
@@ -66,7 +68,6 @@ $url1200: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-
   }
 }
 
-$url1440: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/1x-house-01-1440.webp';
 @media (min-width: 1440px) {
   .background-image.final-image.show-image {
     background-image:                   url($url1440);
