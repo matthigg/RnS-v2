@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 
 // Angular Material
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -34,6 +35,7 @@ import { ContactComponent } from './components/contact/contact.component';
     BrowserAnimationsModule,
     BrowserModule,
     MatButtonModule,
+    MatCardModule,
     MatSidenavModule,
     MatToolbarModule,
   ],
