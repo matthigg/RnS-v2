@@ -18,6 +18,7 @@ import { NavToolbarComponent } from './components/nav-toolbar/nav-toolbar.compon
 import { ServicesComponent } from './components/services/services.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SvgSpriteSheetComponent } from './components/svg-sprite-sheet/svg-sprite-sheet.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ContactComponent } from './components/contact/contact.component';
     ServicesComponent,
     OurWorkComponent,
     ContactComponent,
+    SvgSpriteSheetComponent,
   ],
   imports: [
     AppRoutingModule,

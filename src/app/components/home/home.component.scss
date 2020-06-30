@@ -1,10 +1,53 @@
+$mat-card-content-transition: 0.25s ease-in-out;
+
 .landing-page-spacer {
   height: calc(100vh - 64px);
 }
 
+.learn-more-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 mat-card {
-  height: 150px;
-  width: 150px;
+  width: 20vw;
+  & mat-card-actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: $mat-card-content-transition;
+    & h2 {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem 0;
+    }
+    & .svg-right-arrow {
+      fill: none;
+      height: calc(1rem + 0.15vw);
+      left: 0.25rem;
+      position: relative;
+      stroke: black;
+      width: calc(1rem + 0.15vw);
+      transition: $mat-card-content-transition;
+    }
+  }
+  & mat-card-content {
+    height: 20vh;
+    margin-bottom: 0.5rem;
+  }
+  &:hover {
+    cursor: pointer;
+    & mat-card-actions {
+      color: #f3d333;
+      transition: $mat-card-content-transition;
+      & .svg-right-arrow {
+        left: 0.5rem;
+        stroke: #f3d333;
+        transition: $mat-card-content-transition;
+      }
+    }
+  }
 }
 
 mat-toolbar {
@@ -17,7 +60,8 @@ mat-toolbar {
 }
 
 section.services {
-  background-color: white;
+  background-color: #fafafa;
+  padding: 1rem;
 }
 
 @media (min-width: 0px) {
