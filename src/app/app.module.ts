@@ -20,6 +20,7 @@ import { ServiceCardsComponent } from './components/services/service-cards/servi
 import { ServicesComponent } from './components/services/services.component';
 import { SvgSpriteSheetComponent } from './components/svg-sprite-sheet/svg-sprite-sheet.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
+import { FenceCleaningComponent } from './components/services/service-components/fence-cleaning/fence-cleaning.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { OurWorkComponent } from './components/our-work/our-work.component';
     ServicesComponent,
     SvgSpriteSheetComponent,
     OurWorkComponent,
+    FenceCleaningComponent,
   ],
   imports: [
     AppRoutingModule,
