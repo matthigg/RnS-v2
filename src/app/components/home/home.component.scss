@@ -1,4 +1,4 @@
-$mat-card-content-transition: 0.25s ease-in-out;
+$mat-card-transition: 0.25s ease-in-out;
 
 .landing-page-spacer {
   height: calc(100vh - 64px);
@@ -8,46 +8,6 @@ $mat-card-content-transition: 0.25s ease-in-out;
   align-items: center;
   display: flex;
   justify-content: center;
-}
-
-mat-card {
-  width: 20vw;
-  & mat-card-actions {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: $mat-card-content-transition;
-    & h2 {
-      font-size: 1.25rem;
-      margin: 0 0 0.5rem 0;
-    }
-    & .svg-right-arrow {
-      fill: none;
-      height: calc(1rem + 0.15vw);
-      left: 0.25rem;
-      position: relative;
-      stroke: black;
-      width: calc(1rem + 0.15vw);
-      transition: $mat-card-content-transition;
-    }
-  }
-  & mat-card-content {
-    height: 20vh;
-    margin-bottom: 0.5rem;
-  }
-  &:hover {
-    cursor: pointer;
-    & mat-card-actions {
-      color: #f3d333;
-      transition: $mat-card-content-transition;
-      & .svg-right-arrow {
-        left: 0.5rem;
-        stroke: #f3d333;
-        transition: $mat-card-content-transition;
-      }
-    }
-  }
 }
 
 mat-toolbar {
@@ -62,28 +22,4 @@ mat-toolbar {
 section.services {
   background-color: #fafafa;
   padding: 1rem;
-}
-
-@media (min-width: 0px) {
-  .card-background-fence-cleaning.show-image {
-    background-image:                   url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-320.jpg');
-    background-image: -webkit-image-set(url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-320.webp') 1x, url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/2x-fence-cleaning-01-320.webp') 2x);  
-    background-image:         image-set(url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-320.jpg') 1x, url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/2x-fence-cleaning-01-320.jpg') 2x);
-  }
-}
-
-@media (min-width: 576px) {
-  .card-background-fence-cleaning.show-image {
-    background-image:                   url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-576.jpg');
-    background-image: -webkit-image-set(url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-576.webp') 1x, url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/2x-fence-cleaning-01-576.webp') 2x);  
-    background-image:         image-set(url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-576.jpg') 1x, url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/2x-fence-cleaning-01-576.jpg') 2x);
-  }
-}
-
-@media (min-width: 768px) {
-  .card-background-fence-cleaning.show-image {
-    background-image:                   url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-768.jpg');
-    background-image: -webkit-image-set(url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-768.webp') 1x, url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/2x-fence-cleaning-01-768.webp') 2x);  
-    background-image:         image-set(url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/1x-fence-cleaning-01-768.jpg') 1x, url('https://rns-static-and-media-files.s3.amazonaws.com/static/img/fence-cleaning-01/140kb/2x-fence-cleaning-01-768.jpg') 2x);
-  }
 }

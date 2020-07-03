@@ -11,26 +11,27 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Components
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
-import { NavToolbarComponent } from './components/nav-toolbar/nav-toolbar.component';
-import { ServicesComponent } from './components/services/services.component';
-import { OurWorkComponent } from './components/our-work/our-work.component';
+import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavToolbarComponent } from './components/nav-toolbar/nav-toolbar.component';
+import { ServiceCardsComponent } from './components/services/service-cards/service-cards.component';
+import { ServicesComponent } from './components/services/services.component';
 import { SvgSpriteSheetComponent } from './components/svg-sprite-sheet/svg-sprite-sheet.component';
-
+import { OurWorkComponent } from './components/our-work/our-work.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
     AboutComponent,
-    NavToolbarComponent,
-    ServicesComponent,
-    OurWorkComponent,
+    AppComponent,
     ContactComponent,
+    HomeComponent,
+    NavToolbarComponent,
+    ServiceCardsComponent,
+    ServicesComponent,
     SvgSpriteSheetComponent,
+    OurWorkComponent,
   ],
   imports: [
     AppRoutingModule,
