@@ -38,42 +38,35 @@ mat-sidenav-container {
   }
 }
 
-@media (min-width: 0px) {
-  .background-image.final-image.show-image {
+.background-image.final-image.show-image {
+  @media (min-width: 0px) {
     background-image:                   url($url576);
     background-image: -webkit-image-set(url($url576) 1x, url($url576) 2x);  
     background-image:         image-set(url($url576) 1x, url($url576) 2x);
   }
-}
-
-@media (min-width: 768px) {
-  .background-image.final-image.show-image {
+  @media (min-width: 768px) {
     background-image:                   url($url768);
     background-image: -webkit-image-set(url($url768) 1x, url($url768) 2x);  
     background-image:         image-set(url($url768) 1x, url($url768) 2x);
   }
-}
-
-@media (min-width: 992px) {
-  .background-image.final-image.show-image {
+  @media (min-width: 992px) {
     background-image:                   url($url992);
     background-image: -webkit-image-set(url($url992) 1x);  
     background-image:         image-set(url($url992) 1x);
   }
-}
-
-@media (min-width: 1200px) {
-  .background-image.final-image.show-image {
+  @media (min-width: 1200px) {
     background-image:                   url($url1200);
     background-image: -webkit-image-set(url($url1200) 1x);  
     background-image:         image-set(url($url1200) 1x);
   }
-}
-
-@media (min-width: 1440px) {
-  .background-image.final-image.show-image {
+  @media (min-width: 1440px) {
     background-image:                   url($url1440);
     background-image: -webkit-image-set(url($url1440) 1x);  
     background-image:         image-set(url($url1440) 1x);
   }
+}
+
+.nav-toolbar-spacer {
+  height: 64px;
+  width: 100%;
 }
