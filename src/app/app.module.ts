@@ -20,7 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavToolbarComponent } from './components/nav-toolbar/nav-toolbar.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { OutdoorStainRemovalComponent } from './components/services/service-components/outdoor-stain-removal/outdoor-stain-removal.component';
-import { ServiceCardsComponent } from './components/services/service-cards/service-cards.component';
+import { ServiceComponentsComponent } from './components/services/service-components/service-components.component';
 import { ServicesComponent } from './components/services/services.component';
 import { SoftWashComponent } from './components/services/service-components/soft-wash/soft-wash.component';
 import { SvgSpriteSheetComponent } from './components/svg-sprite-sheet/svg-sprite-sheet.component';
@@ -37,7 +37,7 @@ import { SurfaceCleaningComponent } from './components/services/service-componen
     NavToolbarComponent,
     OurWorkComponent,
     OutdoorStainRemovalComponent,
-    ServiceCardsComponent,
+    ServiceComponentsComponent,
     ServicesComponent,
     SoftWashComponent,
     SvgSpriteSheetComponent,
