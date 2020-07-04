@@ -1,16 +1,20 @@
 <section>
   <h1>Fence Cleaning in {{ city + ", " + state }}</h1>
   <div class="contact-text-and-contact-form-grid">
+
+    <!-- Contact Text -->
     <div class="contact-text">
-      <p>
-        Want your dingy grey or green fence to look almost brand new without 
-        painting or staining?
-      </p>
+      <div>
+        <p>
+          Want your dingy grey or green fence to look almost <span>brand new</span>
+          without painting or staining?
+        </p>
+      </div>
       <p>
         We will make your grey and green fence beautiful again. Cleaning, 
         stripping and staining options available.
       </p>
-      <p>Ask us about cleaning your fence today!</p>
+      <p class="contact-text-emphasis">Ask us about cleaning your fence today!</p>
       <ul>
         <li>{{ address + ', ' + city + ', ' + state + ' ' + zipcode }}</li>
         <li>{{ businessHours }}</li>
@@ -18,5 +22,8 @@
         <li>{{ phoneNumber }}</li>
       </ul>
     </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrapper"></div>
   </div>
 </section>
