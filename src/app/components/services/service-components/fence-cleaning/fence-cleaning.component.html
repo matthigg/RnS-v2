@@ -18,7 +18,12 @@
       <ul>
         <li>{{ address + ', ' + city + ', ' + state + ' ' + zipcode }}</li>
         <li>{{ businessHours }}</li>
-        <li>{{ email }}</li>
+        <li>
+          <svg class="svg-email">
+            <use href="#svg-email"></use>
+          </svg>
+          {{ email }}
+        </li>
         <li>{{ phoneNumber }}</li>
       </ul>
     </div>

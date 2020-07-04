@@ -31,7 +31,16 @@
       list-style-type: none;
       margin-top: 3rem;
       & li {
+        align-items: center;
+        display: flex;
         margin: calc(0.5rem + 0.5vw) 0;
+        & .svg-email {
+          fill: black;
+          height: calc(1rem + 0.5vw);
+          margin-right: 0.75rem;
+          stroke: none;
+          width: calc(1rem + 0.5vw);
+        }
       }
     }
   }
@@ -46,5 +55,10 @@ section {
   background-color: #fafafa;
   box-sizing: border-box;
   min-height: calc(100vh - 64px);
-  padding: calc(1rem + 1vw);
+  @media (max-width: 767.98px) {
+    padding: calc(1rem + 1vw);
+  }
+  @media (min-width: 768px) {
+    padding: calc(1rem + 1vw) calc(1rem + 4vw);
+  }
 }
