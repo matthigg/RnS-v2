@@ -1,91 +1,93 @@
-<mat-card>
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+  <mat-card>
 
-  <!-- Header -->
-  <mat-card-header>
-    <mat-card-title>Request a FREE Estimate!</mat-card-title>
-  </mat-card-header>
+    <!-- Header -->
+    <mat-card-header>
+      <mat-card-title>Request a FREE Estimate!</mat-card-title>
+    </mat-card-header>
 
-  <!-- Content -->
-  <mat-card-content>
+    <!-- Content -->
+    <mat-card-content>
 
-    <!-- Name -->
-    <mat-form-field>
-      <mat-label>Name</mat-label>
-      <input matInput type="text">
-    </mat-form-field>
+      <!-- Name -->
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput type="text">
+      </mat-form-field>
 
-    <!-- Email -->
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input matInput type="text">
-    </mat-form-field>
+      <!-- Email -->
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput type="text">
+      </mat-form-field>
 
-    <!-- Phone -->
-    <mat-form-field>
-      <mat-label>Phone</mat-label>
-      <input matInput type="text">
-    </mat-form-field>
+      <!-- Phone -->
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input formControlName="phone" matInput type="text">
+      </mat-form-field>
 
-    <!-- Number of Stories -->
-    <mat-form-field appearance="fill">
-      <mat-label>Select the number of stories</mat-label>
-      <mat-select>
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4+</mat-option>
-      </mat-select>
-    </mat-form-field>
+      <!-- Number of Stories -->
+      <mat-form-field appearance="fill">
+        <mat-label>Select the number of stories</mat-label>
+        <mat-select formControlName="numberOfStories" >
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4+</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <!-- Type of Exterior -->
-    <mat-form-field appearance="fill">
-      <mat-label>Select the type of exterior</mat-label>
-      <mat-select>
-        <mat-option value="Vinyl">Vinyl</mat-option>
-        <mat-option value="Wood">Wood</mat-option>
-        <mat-option value="Brick">Brick</mat-option>
-        <mat-option value="Aluminum">Aluminum</mat-option>
-        <mat-option value="Other">Other</mat-option>
-      </mat-select>
-    </mat-form-field>
-    
-    <!-- Square Footage -->
-    <mat-form-field>
-      <mat-label>Approximate square footage (input field)</mat-label>
-      <input matInput type="text">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Approximate square footage (drop-down)</mat-label>
-      <mat-select>
-        <mat-option value="< 1000">< 1000</mat-option>
-        <mat-option value="1000 - 1500">1000 - 1500</mat-option>
-        <mat-option value="1500 - 2000">1500 - 2000</mat-option>
-        <mat-option value="2000 - 2500">2000 - 2500</mat-option>
-        <mat-option value="2500 - 3000">2500 - 3000</mat-option>
-        <mat-option value="3000 - 3000">3000 - 3500</mat-option>
-        <mat-option value="3000+">3500+</mat-option>
-      </mat-select>
-    </mat-form-field>
+      <!-- Type of Exterior -->
+      <mat-form-field appearance="fill">
+        <mat-label>Select the type of exterior</mat-label>
+        <mat-select formControlName="typeOfExterior">
+          <mat-option value="Vinyl">Vinyl</mat-option>
+          <mat-option value="Wood">Wood</mat-option>
+          <mat-option value="Brick">Brick</mat-option>
+          <mat-option value="Aluminum">Aluminum</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <!-- Square Footage -->
+      <mat-form-field>
+        <mat-label>Approximate square footage (input field)</mat-label>
+        <input formControlName="squareFootageInput" matInput type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Approximate square footage (drop-down)</mat-label>
+        <mat-select formControlName="squareFootageSelect">
+          <mat-option value="< 1000">< 1000</mat-option>
+          <mat-option value="1000 - 1500">1000 - 1500</mat-option>
+          <mat-option value="1500 - 2000">1500 - 2000</mat-option>
+          <mat-option value="2000 - 2500">2000 - 2500</mat-option>
+          <mat-option value="2500 - 3000">2500 - 3000</mat-option>
+          <mat-option value="3000 - 3000">3000 - 3500</mat-option>
+          <mat-option value="3000+">3500+</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <!-- Services -->
-    <h3>Services</h3>
-    <h4>Check all that apply</h4>
-    <mat-checkbox value="Fence Cleaning">Fence Cleaning</mat-checkbox>
-    <mat-checkbox value="Surface Cleaning">Surface Cleaning</mat-checkbox>
-    <mat-checkbox value="Soft Wash">Soft Wash</mat-checkbox>
-    <mat-checkbox value="Outdoor Stain Removal">Outdoor Stain Removal</mat-checkbox>
-    <mat-checkbox value="Deck Cleaning & Restoration">Deck Cleaning & Restoration</mat-checkbox>
+      <!-- Services -->
+      <h3>Services</h3>
+      <h4>Check all that apply:</h4>
+      <mat-checkbox formControlName="serviceFenceCleaning" value="Fence Cleaning">Fence Cleaning</mat-checkbox>
+      <mat-checkbox formControlName="serviceSurfaceCleaning" value="Surface Cleaning">Surface Cleaning</mat-checkbox>
+      <mat-checkbox formControlName="serviceSoftWash" value="Soft Wash">Soft Wash</mat-checkbox>
+      <mat-checkbox formControlName="serviceOutdoorStainRemoval" value="Outdoor Stain Removal">Outdoor Stain Removal</mat-checkbox>
+      <mat-checkbox formControlName="serviceDeckCleaningAndRestoration" value="Deck Cleaning & Restoration">Deck Cleaning & Restoration</mat-checkbox>
 
-    <!-- Message -->
-    <mat-form-field>
-      <mat-label>Send us a message</mat-label>
-      <textarea matInput rows="4"></textarea>
-    </mat-form-field>
+      <!-- Message -->
+      <mat-form-field>
+        <mat-label>Send us a message</mat-label>
+        <textarea formControlName="message" matInput rows="4"></textarea>
+      </mat-form-field>
 
-  </mat-card-content>
+    </mat-card-content>
 
-  <!-- Submit Button -->
-  <mat-card-actions>
-    <button mat-raised-button type="submit">Get Your FREE Estimate!</button>
-  </mat-card-actions>
-</mat-card>
+    <!-- Submit Button -->
+    <mat-card-actions>
+      <button mat-raised-button type="submit">Get Your FREE Estimate!</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

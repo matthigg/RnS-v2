@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
-  constructor() { }
+  // Reactive Form
+  contactForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', Validators.required],
+    phone: ['', Validators.required],
+    numberOfStories: ['', Validators.required],
+    typeOfExterior: ['', Validators.required],
+    squareFootageInput: ['', Validators.required],
+    squareFootageSelect: ['', Validators.required],
+    serviceFenceCleaning: ['', Validators.required],
+    serviceSurfaceCleaning: ['', Validators.required],
+    serviceSoftWash: ['', Validators.required],
+    serviceOutdoorStainRemoval: ['', Validators.required],
+    serviceDeckCleaningAndRestoration: ['', Validators.required],
+    message: ['', Validators.required],
+  });
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    console.log('--- contactForm:', this.contactForm)
   }
 
 }
