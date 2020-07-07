@@ -5,14 +5,14 @@ import { Routes, RouterModule } from '@angular/router';
 // Components
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { FenceCleaningComponent } from './components/services/service-components/fence-cleaning/fence-cleaning.component';
-import { SurfaceCleaningComponent } from './components/services/service-components/surface-cleaning/surface-cleaning.component';
-import { SoftWashComponent } from './components/services/service-components/soft-wash/soft-wash.component';
-import { OutdoorStainRemovalComponent } from './components/services/service-components/outdoor-stain-removal/outdoor-stain-removal.component';
-import { DeckCleaningAndRestorationComponent } from './components/services/service-components/deck-cleaning-and-restoration/deck-cleaning-and-restoration.component';
+import { FenceCleaningComponent } from './components/our-services/service-components/fence-cleaning/fence-cleaning.component';
+import { SurfaceCleaningComponent } from './components/our-services/service-components/surface-cleaning/surface-cleaning.component';
+import { SoftWashComponent } from './components/our-services/service-components/soft-wash/soft-wash.component';
+import { OutdoorStainRemovalComponent } from './components/our-services/service-components/outdoor-stain-removal/outdoor-stain-removal.component';
+import { DeckCleaningAndRestorationComponent } from './components/our-services/service-components/deck-cleaning-and-restoration/deck-cleaning-and-restoration.component';
 import { HomeComponent } from './components/home/home.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
-import { ServicesComponent } from './components/services/services.component';
+import { ServicesComponent } from './components/our-services/services.component';
 
 const routes: Routes = [
   { path: 'about',    component: AboutComponent },
