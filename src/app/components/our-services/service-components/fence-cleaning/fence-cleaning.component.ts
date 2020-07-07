@@ -6,7 +6,10 @@ import { BusinessInformationService } from '../../../../services/business-inform
 @Component({
   selector: 'app-fence-cleaning',
   templateUrl: './fence-cleaning.component.html',
-  styleUrls: ['./fence-cleaning.component.scss']
+  styleUrls: [
+    './fence-cleaning.component.scss', 
+    '../shared/shared-services-styles.scss',
+  ]
 })
 export class FenceCleaningComponent implements OnInit {
   address: string = this.businessInformationService.address;
