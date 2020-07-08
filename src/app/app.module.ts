@@ -31,6 +31,7 @@ import { SoftWashComponent } from './components/our-services/service-components/
 import { SvgSpriteSheetComponent } from './components/svg-sprite-sheet/svg-sprite-sheet.component';
 import { SurfaceCleaningComponent } from './components/our-services/service-components/surface-cleaning/surface-cleaning.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
+import { ConsoleLogPipe } from './components/shared/pipes/console-log.pipe';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ContactFormComponent } from './components/contact/contact-form/contact-
     SvgSpriteSheetComponent,
     SurfaceCleaningComponent,
     ContactFormComponent,
+    ConsoleLogPipe,
   ],
   imports: [
     AppRoutingModule,

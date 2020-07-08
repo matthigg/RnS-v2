@@ -13,6 +13,7 @@
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input formControlName="name" matInput type="text">
+        <mat-error *ngIf="contactForm.get('name').errors.required">Please enter your name</mat-error>
       </mat-form-field>
 
       <!-- Email -->
@@ -24,7 +25,7 @@
       <!-- Phone -->
       <mat-form-field>
         <mat-label>Phone</mat-label>
-        <input formControlName="phone" matInput type="text">
+        <input formControlName="phone" matInput type="tel">
       </mat-form-field>
 
       <!-- Number of Stories -->
@@ -71,11 +72,11 @@
       <!-- Services -->
       <h3>Services</h3>
       <h4>Check all that apply:</h4>
-      <mat-checkbox formControlName="serviceFenceCleaning" value="Fence Cleaning">Fence Cleaning</mat-checkbox>
-      <mat-checkbox formControlName="serviceSurfaceCleaning" value="Surface Cleaning">Surface Cleaning</mat-checkbox>
-      <mat-checkbox formControlName="serviceSoftWash" value="Soft Wash">Soft Wash</mat-checkbox>
-      <mat-checkbox formControlName="serviceOutdoorStainRemoval" value="Outdoor Stain Removal">Outdoor Stain Removal</mat-checkbox>
-      <mat-checkbox formControlName="serviceDeckCleaningAndRestoration" value="Deck Cleaning & Restoration">Deck Cleaning & Restoration</mat-checkbox>
+      <mat-checkbox formControlName="svcFenceCleaning" value="Fence Cleaning">Fence Cleaning</mat-checkbox>
+      <mat-checkbox formControlName="svcSurfaceCleaning" value="Surface Cleaning">Surface Cleaning</mat-checkbox>
+      <mat-checkbox formControlName="svcSoftWash" value="Soft Wash">Soft Wash</mat-checkbox>
+      <mat-checkbox formControlName="svcStainRemoval" value="Outdoor Stain Removal">Outdoor Stain Removal</mat-checkbox>
+      <mat-checkbox formControlName="svcDeckCleaning" value="Deck Cleaning & Restoration">Deck Cleaning & Restoration</mat-checkbox>
 
       <!-- Message -->
       <mat-form-field>
