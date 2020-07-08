@@ -11,12 +11,12 @@ export class ContactFormComponent implements OnInit {
   // Reactive Form
   contactForm = this.fb.group({
     name: ['', Validators.required],
-    email: ['', Validators.email],
+    email: ['', [Validators.required, Validators.email]],
     phone: ['', Validators.required],
     numberOfStories: ['', Validators.required],
     typeOfExterior: ['', Validators.required],
-    squareFootageInput: ['', Validators.required],
-    squareFootageSelect: ['', Validators.required],
+    sqFtInput: ['', Validators.required],
+    sqFtSelect: ['', Validators.required],
     svcFenceCleaning: ['', Validators.required],
     svcSurfaceCleaning: ['', Validators.required],
     svcSoftWash: ['', Validators.required],
@@ -29,13 +29,14 @@ export class ContactFormComponent implements OnInit {
   get phone() { return this.contactForm.get('phone'); }
   get numberOfStories() { return this.contactForm.get('numberOfStories'); }
   get typeOfExterior() { return this.contactForm.get('typeOfExterior'); }
-  get squareFootageInput() { return this.contactForm.get('squareFootageInput'); }
-  get squareFootageSelect() { return this.contactForm.get('squareFootageSelect'); }
+  get sqFtInput() { return this.contactForm.get('sqFtInput'); }
+  get sqFtSelect() { return this.contactForm.get('sqFtSelect'); }
   get svcFenceCleaning() { return this.contactForm.get('svcFenceCleaning'); }
   get svcSurfaceCleaning() { return this.contactForm.get('svcSurfaceCleaning'); }
   get svcSoftWash() { return this.contactForm.get('svcSoftWash'); }
   get svcStainRemoval() { return this.contactForm.get('svcStainRemoval'); }
   get svcDeckCleaning() { return this.contactForm.get('svcDeckCleaning'); }
+  get message() { return this.contactForm.get('message'); }
 
   constructor(private fb: FormBuilder) { }
 
