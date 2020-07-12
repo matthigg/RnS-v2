@@ -81,7 +81,6 @@
       <h3>Services</h3>
       <h4>Check all that apply:</h4>
       <ng-container>
-        <!-- <mat-selection-list formGroupName="services"> -->
         <mat-selection-list formControlName="services" (selectionChange)="onClickService()">
           <mat-list-option value="Fence Cleaning">Fence Cleaning</mat-list-option>
           <mat-list-option value="Surface Cleaning">Surface Cleaning</mat-list-option>
@@ -89,7 +88,6 @@
           <mat-list-option value="Stain Removal">Stain Removal</mat-list-option>
           <mat-list-option value="Deck Cleaning">Deck Cleaning</mat-list-option>
         </mat-selection-list>
-
         <mat-error class="services-error" *ngIf="servicesFormControlError?.noSelectedService">
           Please select at least one service
         </mat-error>

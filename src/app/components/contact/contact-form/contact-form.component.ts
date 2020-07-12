@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, ValidationErrors, Validators } from '@angular/forms';
 
 // RxJS
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 // Services
 import { StateService } from './services/state.service';
@@ -32,13 +32,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   //   typeOfExterior: ['', Validators.required],
   //   sqFtInput: ['', Validators.required],
   //   sqFtSelect: ['', Validators.required],
-  //   services: this.fb.group({
-  //     fenceCleaning: false,
-  //     surfaceCleaning: false,
-  //     softWash: false,
-  //     stainRemoval: false,
-  //     deckCleaning: false,
-  //   }),
+  //   services: ['', servicesValidator],
   //   message: ['', Validators.required],
   // });
   contactForm = this.fb.group({
