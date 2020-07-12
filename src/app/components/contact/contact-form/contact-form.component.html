@@ -78,6 +78,7 @@
       </mat-form-field>
 
       <!-- Services -->
+      <mat-divider></mat-divider>
       <h3>Services</h3>
       <h4>Check all that apply:</h4>
       <ng-container>
@@ -94,7 +95,8 @@
       </ng-container>
 
       <!-- Message -->
-      <mat-form-field>
+      <mat-divider></mat-divider>
+      <mat-form-field appearance="outline" class="textarea-form-field">
         <mat-label>Send us a message</mat-label>
         <textarea formControlName="message" matInput rows="4"></textarea>
         <mat-error *ngIf="message.errors?.required">Please enter a message</mat-error>

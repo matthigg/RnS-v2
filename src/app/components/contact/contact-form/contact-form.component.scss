@@ -7,12 +7,26 @@ h4 {
   margin-top: 0;
 }
 
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+}
+
+mat-card-content {
+  margin-bottom: 0;
+}
+
 mat-card-header {
   justify-content: center;
 }
 
 mat-card-subtitle {
   text-align: center;
+}
+
+mat-dividerd {
+  margin-bottom: 2rem;
 }
 
 mat-checkbox {
@@ -22,4 +36,8 @@ mat-checkbox {
 
 mat-form-field {
   width: 100%;
+}
+
+.textarea-form-field {
+  margin-top: 1rem;
 }
