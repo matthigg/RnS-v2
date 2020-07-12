@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -62,6 +63,7 @@ import { ConsoleLogPipe } from './components/shared/pipes/console-log.pipe';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule,
     MatSelectModule,
     MatSidenavModule,
     MatToolbarModule,

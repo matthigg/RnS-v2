@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 // RxJS
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -8,11 +8,10 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 import { StateService } from './services/state.service';
 
 // Custom Form Validator
-function servicesValidator(formGroup: FormGroup) : ValidationErrors | null {
-  const selectionExists = Object.values(formGroup.value).includes(true);
-  const touched = formGroup.touched;
-  const dirty = formGroup.dirty;
-  return (!selectionExists && (touched || dirty)) ? { 'noSelectedService': true } : null;
+function servicesValidator(formControl: FormControl) : ValidationErrors | null {
+  const touched = formControl.touched;
+  const dirty = formControl.dirty;
+  return formControl.value.length === 0 && (touched || dirty) ? { 'noSelectedService': true } : null;
 }
 
 @Component({
@@ -21,7 +20,7 @@ function servicesValidator(formGroup: FormGroup) : ValidationErrors | null {
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnDestroy, OnInit {
-  servicesFormGroupError: null | { noSelectedService: boolean } = null;
+  servicesFormControlError: null | { noSelectedService: boolean } = null;
   private subscriptions: Subscription = new Subscription()
 
   // Reactive Form
@@ -50,13 +49,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
     typeOfExterior: '',
     sqFtInput: '',
     sqFtSelect: '',
-    services: this.fb.group({
-      fenceCleaning: false,
-      surfaceCleaning: false,
-      softWash: false,
-      stainRemoval: false,
-      deckCleaning: false,
-    }, { validators: servicesValidator }),
+    services: ['', servicesValidator],
     message: '',
   });
   get name() { return this.contactForm.get('name'); }
@@ -83,13 +76,13 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this.subscriptions.add(this.stateService.servicesFormGroupError
-      .subscribe(response => this.servicesFormGroupError = response));
+    this.subscriptions.add(this.stateService.servicesFormControlError
+      .subscribe(response => this.servicesFormControlError = response));
   }
 
   onClickService(): void {
     setTimeout(_ => {
-      this.stateService.servicesFormGroupError.next(this.contactForm.controls.services.errors);
+      this.stateService.servicesFormControlError.next(this.contactForm.controls.services.errors);
     });
   }
 

@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class StateService {
-  servicesFormGroupError = new BehaviorSubject(null);
+  servicesFormControlError = new BehaviorSubject(null);
 
   constructor() { }
 }
