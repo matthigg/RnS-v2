@@ -4,6 +4,7 @@
     <!-- Header -->
     <mat-card-header>
       <mat-card-title>Request a FREE Estimate!</mat-card-title>
+      <mat-card-subtitle>* indicates a required field</mat-card-subtitle>
     </mat-card-header>
 
     <!-- Content -->
@@ -11,14 +12,14 @@
 
       <!-- Name -->
       <mat-form-field>
-        <mat-label>Name</mat-label>
+        <mat-label>Name *</mat-label>
         <input formControlName="name" matInput type="text">
         <mat-error *ngIf="name.errors?.required">Please enter your name</mat-error>
       </mat-form-field>
 
       <!-- Email -->
       <mat-form-field>
-        <mat-label>Email</mat-label>
+        <mat-label>Email *</mat-label>
         <input formControlName="email" matInput type="text">
         <mat-error *ngIf="email.errors?.required">Please enter an email address</mat-error>
         <mat-error *ngIf="email.errors?.email">Please enter a valid email address</mat-error>
@@ -26,14 +27,14 @@
 
       <!-- Phone -->
       <mat-form-field>
-        <mat-label>Phone</mat-label>
+        <mat-label>Phone *</mat-label>
         <input formControlName="phone" matInput type="tel">
         <mat-error *ngIf="phone.errors?.required">Please enter your phone number</mat-error>
       </mat-form-field>
 
       <!-- Number of Stories -->
       <mat-form-field appearance="fill">
-        <mat-label>Select the number of stories</mat-label>
+        <mat-label>Select the number of stories *</mat-label>
         <mat-select formControlName="numberOfStories" >
           <mat-option value="1">1</mat-option>
           <mat-option value="2">2</mat-option>
@@ -45,7 +46,7 @@
 
       <!-- Type of Exterior -->
       <mat-form-field appearance="fill">
-        <mat-label>Select the type of exterior</mat-label>
+        <mat-label>Select the type of exterior *</mat-label>
         <mat-select formControlName="typeOfExterior">
           <mat-option value="Vinyl">Vinyl</mat-option>
           <mat-option value="Wood">Wood</mat-option>
@@ -58,12 +59,12 @@
       
       <!-- Square Footage -->
       <mat-form-field>
-        <mat-label>Approximate square footage (input field)</mat-label>
+        <mat-label>Approximate square footage * (input field)</mat-label>
         <input formControlName="sqFtInput" matInput type="text">
         <mat-error *ngIf="sqFtInput.errors?.required">Please enter the type of exterior</mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Approximate square footage (drop-down)</mat-label>
+        <mat-label>Approximate square footage * (drop-down)</mat-label>
         <mat-select formControlName="sqFtSelect">
           <mat-option value="< 1000">< 1000</mat-option>
           <mat-option value="1000 - 1500">1000 - 1500</mat-option>
@@ -79,11 +80,31 @@
       <!-- Services -->
       <h3>Services</h3>
       <h4>Check all that apply:</h4>
-      <mat-checkbox formControlName="svcFenceCleaning" value="Fence Cleaning">Fence Cleaning</mat-checkbox>
-      <mat-checkbox formControlName="svcSurfaceCleaning" value="Surface Cleaning">Surface Cleaning</mat-checkbox>
-      <mat-checkbox formControlName="svcSoftWash" value="Soft Wash">Soft Wash</mat-checkbox>
-      <mat-checkbox formControlName="svcStainRemoval" value="Outdoor Stain Removal">Outdoor Stain Removal</mat-checkbox>
-      <mat-checkbox formControlName="svcDeckCleaning" value="Deck Cleaning & Restoration">Deck Cleaning & Restoration</mat-checkbox>
+      <ng-container formGroupName="services">
+        <mat-checkbox 
+          formControlName="fenceCleaning" 
+          value="Fence Cleaning"
+          (click)="onClickService()">Fence Cleaning</mat-checkbox>
+        <mat-checkbox 
+          formControlName="surfaceCleaning" 
+          value="Surface Cleaning"
+          (click)="onClickService()">Surface Cleaning</mat-checkbox>
+        <mat-checkbox 
+          formControlName="softWash" 
+          value="Soft Wash"
+          (click)="onClickService()">Soft Wash</mat-checkbox>
+        <mat-checkbox 
+          formControlName="stainRemoval" 
+          value="Outdoor Stain Removal"
+          (click)="onClickService()">Outdoor Stain Removal</mat-checkbox>
+        <mat-checkbox 
+          formControlName="deckCleaning" 
+          value="Deck Cleaning & Restoration"
+          (click)="onClickService()">Deck Cleaning & Restoration</mat-checkbox>
+        <div class="services-error" *ngIf="servicesFormGroupError?.noSelectedService">
+          Please select at least one service
+        </div>
+      </ng-container>
 
       <!-- Message -->
       <mat-form-field>
