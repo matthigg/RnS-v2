@@ -25,10 +25,6 @@ mat-card-subtitle {
   text-align: center;
 }
 
-mat-dividerd {
-  margin-bottom: 2rem;
-}
-
 mat-checkbox {
   display: block;
   margin-bottom: 0.5rem;
@@ -36,6 +32,24 @@ mat-checkbox {
 
 mat-form-field {
   width: 100%;
+}
+
+.services-error-wrapper {
+  height: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.services-error {
+  font-size: 75%;
+  font-weight: 400;
+  overflow: hidden;
+  position: relative;
+  top: -10px;
+  &.show-error {
+    top: 0;
+    transition: 0.15s ease-out;
+  }
 }
 
 .textarea-form-field {

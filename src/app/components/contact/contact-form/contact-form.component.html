@@ -89,9 +89,18 @@
           <mat-list-option value="Stain Removal">Stain Removal</mat-list-option>
           <mat-list-option value="Deck Cleaning">Deck Cleaning</mat-list-option>
         </mat-selection-list>
-        <mat-error class="services-error" *ngIf="servicesFormControlError?.noSelectedService">
+        <!-- <mat-error class="services-error" *ngIf="servicesFormControlError?.noSelectedService">
+          Please select at least one service
+        </mat-error> -->
+        <div class="services-error-wrapper">
+          <mat-error 
+          [ngClass]="{ 
+            'services-error': true,
+            'show-error': servicesFormControlError?.noSelectedService ? true : false
+          }">
           Please select at least one service
         </mat-error>
+      </div>
       </ng-container>
 
       <!-- Message -->
