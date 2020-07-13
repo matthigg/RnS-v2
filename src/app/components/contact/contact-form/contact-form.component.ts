@@ -33,17 +33,6 @@ export class ContactFormComponent implements OnDestroy, OnInit {
     services: ['', servicesValidator],
     message: '',
   });
-  // contactForm = this.fb.group({
-  //   name: ['', Validators.required],
-  //   email: '',
-  //   phone: '',
-  //   numberOfStories: '',
-  //   typeOfExterior: '',
-  //   sqFtInput: '',
-  //   sqFtSelect: '',
-  //   services: ['', servicesValidator],
-  //   message: '',
-  // });
   get name() { return this.contactForm.get('name'); }
   get email() { return this.contactForm.get('email'); }
   get phone() { return this.contactForm.get('phone'); }

@@ -3,7 +3,7 @@
 
     <!-- Header -->
     <mat-card-header>
-      <mat-card-title>Request a FREE Estimate!</mat-card-title>
+      <mat-card-title>Request a Free Estimate</mat-card-title>
       <mat-card-subtitle>* indicates a required field</mat-card-subtitle>
     </mat-card-header>
 
@@ -80,7 +80,7 @@
       <!-- Services -->
       <mat-divider></mat-divider>
       <h3>Services</h3>
-      <h4>Check all that apply *</h4>
+      <h4>Check all that apply (select at least one service) *</h4>
       <ng-container>
         <mat-selection-list formControlName="services" (selectionChange)="onClickService()">
           <mat-list-option value="Fence Cleaning">Fence Cleaning</mat-list-option>
@@ -115,7 +115,7 @@
         mat-raised-button 
         type="submit"
         [disabled]="contactForm.invalid">
-        Get Your FREE Estimate!
+        Get Your Free Estimate!
       </button>
     </mat-card-actions>
   </mat-card>
