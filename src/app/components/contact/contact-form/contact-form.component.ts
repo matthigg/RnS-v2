@@ -9,9 +9,7 @@ import { StateService } from './services/state.service';
 
 // Custom Form Validator
 function servicesValidator(formControl: FormControl) : ValidationErrors | null {
-  const touched = formControl.touched;
-  const dirty = formControl.dirty;
-  return formControl.value.length === 0 && (touched || dirty) ? { 'noSelectedService': true } : null;
+  return formControl.value.length === 0 ? { 'noSelectedService': true } : null;
 }
 
 @Component({
@@ -24,28 +22,28 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   private subscriptions: Subscription = new Subscription()
 
   // Reactive Form
-  // contactForm = this.fb.group({
-  //   name: ['', Validators.required],
-  //   email: ['', [Validators.required, Validators.email]],
-  //   phone: ['', Validators.required],
-  //   numberOfStories: ['', Validators.required],
-  //   typeOfExterior: ['', Validators.required],
-  //   sqFtInput: ['', Validators.required],
-  //   sqFtSelect: ['', Validators.required],
-  //   services: ['', servicesValidator],
-  //   message: ['', Validators.required],
-  // });
   contactForm = this.fb.group({
     name: ['', Validators.required],
-    email: '',
+    email: ['', [Validators.required, Validators.email]],
     phone: '',
-    numberOfStories: '',
-    typeOfExterior: '',
+    numberOfStories: ['', Validators.required],
+    typeOfExterior: ['', Validators.required],
     sqFtInput: '',
     sqFtSelect: '',
     services: ['', servicesValidator],
     message: '',
   });
+  // contactForm = this.fb.group({
+  //   name: ['', Validators.required],
+  //   email: '',
+  //   phone: '',
+  //   numberOfStories: '',
+  //   typeOfExterior: '',
+  //   sqFtInput: '',
+  //   sqFtSelect: '',
+  //   services: ['', servicesValidator],
+  //   message: '',
+  // });
   get name() { return this.contactForm.get('name'); }
   get email() { return this.contactForm.get('email'); }
   get phone() { return this.contactForm.get('phone'); }

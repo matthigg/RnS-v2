@@ -27,7 +27,7 @@
 
       <!-- Phone -->
       <mat-form-field>
-        <mat-label>Phone *</mat-label>
+        <mat-label>Phone</mat-label>
         <input formControlName="phone" matInput type="tel">
         <mat-error *ngIf="phone.errors?.required">Please enter your phone number</mat-error>
       </mat-form-field>
@@ -59,12 +59,12 @@
       
       <!-- Square Footage -->
       <mat-form-field>
-        <mat-label>Approximate square footage * (input field)</mat-label>
+        <mat-label>Approximate square footage (input field)</mat-label>
         <input formControlName="sqFtInput" matInput type="text">
         <mat-error *ngIf="sqFtInput.errors?.required">Please enter the type of exterior</mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Approximate square footage * (drop-down)</mat-label>
+        <mat-label>Approximate square footage (drop-down)</mat-label>
         <mat-select formControlName="sqFtSelect">
           <mat-option value="< 1000">< 1000</mat-option>
           <mat-option value="1000 - 1500">1000 - 1500</mat-option>
@@ -80,7 +80,7 @@
       <!-- Services -->
       <mat-divider></mat-divider>
       <h3>Services</h3>
-      <h4>Check all that apply:</h4>
+      <h4>Check all that apply *</h4>
       <ng-container>
         <mat-selection-list formControlName="services" (selectionChange)="onClickService()">
           <mat-list-option value="Fence Cleaning">Fence Cleaning</mat-list-option>
@@ -89,9 +89,6 @@
           <mat-list-option value="Stain Removal">Stain Removal</mat-list-option>
           <mat-list-option value="Deck Cleaning">Deck Cleaning</mat-list-option>
         </mat-selection-list>
-        <!-- <mat-error class="services-error" *ngIf="servicesFormControlError?.noSelectedService">
-          Please select at least one service
-        </mat-error> -->
         <div class="services-error-wrapper">
           <mat-error 
           [ngClass]="{ 
@@ -114,7 +111,12 @@
 
     <!-- Submit Button -->
     <mat-card-actions>
-      <button mat-raised-button type="submit">Get Your FREE Estimate!</button>
+      <button 
+        mat-raised-button 
+        type="submit"
+        [disabled]="contactForm.invalid">
+        Get Your FREE Estimate!
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>
