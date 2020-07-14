@@ -34,7 +34,7 @@
 
       <!-- Number of Stories -->
       <mat-form-field appearance="fill" class="form-field-number-of-stories">
-        <mat-label>Select the number of stories *</mat-label>
+        <mat-label>Number of stories *</mat-label>
         <mat-select formControlName="numberOfStories" >
           <mat-option value="1">1</mat-option>
           <mat-option value="2">2</mat-option>
@@ -46,7 +46,7 @@
 
       <!-- Type of Exterior -->
       <mat-form-field appearance="fill" class="form-field-type-of-exterior">
-        <mat-label>Select the type of exterior *</mat-label>
+        <mat-label>Type of exterior *</mat-label>
         <mat-select formControlName="typeOfExterior">
           <mat-option value="Vinyl">Vinyl</mat-option>
           <mat-option value="Wood">Wood</mat-option>
@@ -59,13 +59,13 @@
       
       <!-- Square Footage -->
       <mat-form-field class="form-field-sq-ft-input">
-        <mat-label>Approximate square footage (input field)</mat-label>
+        <mat-label>Approx. square footage (input field)</mat-label>
         <input formControlName="sqFtInput" matInput type="text">
         <mat-error *ngIf="sqFtInput.errors?.required">Please enter the type of exterior</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="form-field-sq-ft-select">
-        <mat-label>Approximate square footage (drop-down)</mat-label>
+        <mat-label>Approx. square footage (drop-down)</mat-label>
         <mat-select formControlName="sqFtSelect">
           <mat-option value="< 1000">< 1000</mat-option>
           <mat-option value="1000 - 1500">1000 - 1500</mat-option>
