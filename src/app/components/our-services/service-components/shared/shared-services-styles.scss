@@ -4,9 +4,17 @@ $svg-icon-dimensions: calc(1rem + 0.5vw);
   display: grid;
   grid-auto-rows: minmax(15vh, auto);
   grid-gap: 0;
-  grid-template:
+  @media (max-width: 767.98px) {
+    grid-template:
+    'form'
+    'text';
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 768px) {
+    grid-template:
     'text form';
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
   & .contact-form {
     grid-area: form;
   }
@@ -23,11 +31,22 @@ $svg-icon-dimensions: calc(1rem + 0.5vw);
           color: #f3d333;
           font-style: italic;
         }
+        @media(max-width: 768px) {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        @media(max-width: 768px) {
+          display: none;
+        }
       }
       &:nth-child(3) {
         font-size: 1.35rem;
         font-style: italic;
         font-weight: 500;
+        @media(max-width: 768px) {
+          margin-top: 2rem;
+        }
       }
     }
     & ul {

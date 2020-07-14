@@ -19,6 +19,7 @@ export class ContactComponent implements OnInit {
   phoneNumber: string = this.businessInformationService.phoneNumber;
   state: string = this.businessInformationService.state;
   zipcode: string = this.businessInformationService.zipcode;
+  window = window;
 
   constructor(public businessInformationService: BusinessInformationService) { }
 
