@@ -1,57 +1,37 @@
 $svg-icon-dimensions: calc(1rem + 0.5vw);
 
-.contact-text-and-contact-form-grid {
+.grid-form-info-text-wrapper {
   display: grid;
-  grid-auto-rows: minmax(15vh, auto);
   grid-gap: 0;
+  grid-auto-rows: minmax(10vh, auto);
   @media (max-width: 767.98px) {
     grid-template:
+    'text'
     'form'
-    'text';
+    'info';
     grid-template-columns: 1fr;
   }
   @media (min-width: 768px) {
     grid-template:
-    'text form';
+    'text form'
+    'info form'
+    '. form';
     grid-template-columns: 1fr 1fr;
   }
-  & .contact-form {
+  & .contact-form { 
     grid-area: form;
   }
-  & .contact-text {
-    font-size: 1.25rem;
-    grid-area: text;
-    padding-right: 2rem;
-    & p {
-      text-align: center;
-      &:nth-child(1) {
-        font-size: 1.40rem;
-        font-weight: 500;
-        & span {
-          color: #f3d333;
-          font-style: italic;
-        }
-        @media(max-width: 768px) {
-          display: none;
-        }
-      }
-      &:nth-child(2) {
-        @media(max-width: 768px) {
-          display: none;
-        }
-      }
-      &:nth-child(3) {
-        font-size: 1.35rem;
-        font-style: italic;
-        font-weight: 500;
-        @media(max-width: 768px) {
-          margin-top: 2rem;
-        }
-      }
+  & .contact-info {
+    grid-area: info;
+    @media(max-width: 767.98px) { 
+      // grid-row: 3; 
+      margin-top: 2rem;
+    }
+    @media(min-width: 768px) { 
+      // grid-row: 2; 
     }
     & ul {
       list-style-type: none;
-      margin-top: 3rem;
       & li {
         align-items: center;
         display: flex;
@@ -69,6 +49,28 @@ $svg-icon-dimensions: calc(1rem + 0.5vw);
           width: $svg-icon-dimensions;
           stroke: rgba(0, 0, 0, 0.87);
         }
+      }
+    }
+  }
+  & .contact-text {
+    font-size: 1.25rem;
+    grid-area: text;
+    // grid-row: 1;
+    padding-right: 2rem;
+    & p {
+      text-align: center;
+      &:nth-child(1) {
+        font-size: 1.40rem;
+        font-weight: 500;
+        & span {
+          color: #f3d333;
+          font-style: italic;
+        }
+      }
+      &:nth-child(3) {
+        font-size: 1.35rem;
+        font-style: italic;
+        font-weight: 500;
       }
     }
   }
