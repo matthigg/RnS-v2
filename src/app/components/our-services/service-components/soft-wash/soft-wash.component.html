@@ -1,6 +1,6 @@
 <section>
   <h1>Soft Wash Services in {{ city + ", " + state }}</h1>
-  <div class="contact-text-and-contact-form-grid">
+  <div class="grid-form-info-text-wrapper">
 
     <!-- Contact Text -->
     <div class="contact-text">
@@ -17,6 +17,10 @@
       <p class="contact-text-emphasis">
         Ask us about our soft wash services today!
       </p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
       <ul>
         <li>{{ address + ', ' + city + ', ' + state + ' ' + zipcode }}</li>
         <li>
@@ -36,6 +40,6 @@
     </div>
 
     <!-- Contact Form -->
-    <app-contact-form></app-contact-form>
+    <app-contact-form class="contact-form"></app-contact-form>
   </div>
 </section>
