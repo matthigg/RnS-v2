@@ -11,14 +11,14 @@
     <mat-card-content>
 
       <!-- Name -->
-      <mat-form-field>
+      <mat-form-field class="form-field-name">
         <mat-label>Name *</mat-label>
         <input formControlName="name" matInput type="text">
         <mat-error *ngIf="name.errors?.required">Please enter your name</mat-error>
       </mat-form-field>
 
       <!-- Email -->
-      <mat-form-field>
+      <mat-form-field class="form-field-email">
         <mat-label>Email *</mat-label>
         <input formControlName="email" matInput type="text">
         <mat-error *ngIf="email.errors?.required">Please enter an email address</mat-error>
@@ -26,14 +26,14 @@
       </mat-form-field>
 
       <!-- Phone -->
-      <mat-form-field>
+      <mat-form-field class="form-field-phone">
         <mat-label>Phone</mat-label>
         <input formControlName="phone" matInput type="tel">
         <mat-error *ngIf="phone.errors?.required">Please enter your phone number</mat-error>
       </mat-form-field>
 
       <!-- Number of Stories -->
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="form-field-number-of-stories">
         <mat-label>Select the number of stories *</mat-label>
         <mat-select formControlName="numberOfStories" >
           <mat-option value="1">1</mat-option>
@@ -45,7 +45,7 @@
       </mat-form-field>
 
       <!-- Type of Exterior -->
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="form-field-type-of-exterior">
         <mat-label>Select the type of exterior *</mat-label>
         <mat-select formControlName="typeOfExterior">
           <mat-option value="Vinyl">Vinyl</mat-option>
@@ -58,12 +58,13 @@
       </mat-form-field>
       
       <!-- Square Footage -->
-      <mat-form-field>
+      <mat-form-field class="form-field-sq-ft-input">
         <mat-label>Approximate square footage (input field)</mat-label>
         <input formControlName="sqFtInput" matInput type="text">
         <mat-error *ngIf="sqFtInput.errors?.required">Please enter the type of exterior</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="fill">
+
+      <mat-form-field appearance="fill" class="form-field-sq-ft-select">
         <mat-label>Approximate square footage (drop-down)</mat-label>
         <mat-select formControlName="sqFtSelect">
           <mat-option value="< 1000">< 1000</mat-option>
@@ -78,36 +79,39 @@
       </mat-form-field>
 
       <!-- Services -->
-      <mat-divider></mat-divider>
-      <h3>Services</h3>
-      <h4>Check all that apply (select at least one service) *</h4>
-      <ng-container>
-        <mat-selection-list formControlName="services" (selectionChange)="onClickService()">
-          <mat-list-option value="Fence Cleaning">Fence Cleaning</mat-list-option>
-          <mat-list-option value="Surface Cleaning">Surface Cleaning</mat-list-option>
-          <mat-list-option value="Soft Wash">Soft Wash</mat-list-option>
-          <mat-list-option value="Stain Removal">Stain Removal</mat-list-option>
-          <mat-list-option value="Deck Cleaning">Deck Cleaning</mat-list-option>
-        </mat-selection-list>
-        <div class="services-error-wrapper">
-          <mat-error 
-          [ngClass]="{ 
-            'services-error': true,
-            'show-error': servicesFormControlError?.noSelectedService ? true : false
-          }">
-          Please select at least one service
-        </mat-error>
+      <div class="services-wrapper">
+        <h3>Services</h3>
+        <h4>Select at least one service *</h4>
+        <ng-container>
+          <mat-selection-list formControlName="services" (selectionChange)="onClickService()">
+            <mat-list-option value="Fence Cleaning">Fence Cleaning</mat-list-option>
+            <mat-list-option value="Surface Cleaning">Surface Cleaning</mat-list-option>
+            <mat-list-option value="Soft Wash">Soft Wash</mat-list-option>
+            <mat-list-option value="Stain Removal">Stain Removal</mat-list-option>
+            <mat-list-option value="Deck Cleaning">Deck Cleaning</mat-list-option>
+          </mat-selection-list>
+          <div class="services-error-wrapper">
+            <mat-error 
+              [ngClass]="{ 
+                'services-error': true,
+                'show-error': servicesFormControlError?.noSelectedService ? true : false
+              }">
+              Please select at least one service
+            </mat-error>
+          </div>
+        </ng-container>
       </div>
-      </ng-container>
 
       <!-- Message -->
-      <mat-divider></mat-divider>
       <mat-form-field appearance="outline" class="textarea-form-field">
         <mat-label>Send us a message</mat-label>
-        <textarea formControlName="message" matInput rows="4"></textarea>
+        <textarea formControlName="message" matInput></textarea>
         <mat-error *ngIf="message.errors?.required">Please enter a message</mat-error>
       </mat-form-field>
     </mat-card-content>
+
+    <mat-divider></mat-divider>
+    <div class="spacer"></div>
 
     <!-- Submit Button -->
     <mat-card-actions>
