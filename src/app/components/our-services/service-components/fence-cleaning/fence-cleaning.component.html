@@ -17,24 +17,8 @@
       </p>
     </div>
 
-    <div class="contact-info">
-      <ul>
-        <li>{{ address + ', ' + city + ', ' + state + ' ' + zipcode }}</li>
-        <li>
-          <svg class="svg-hours-of-operation">
-            <use href="#svg-hours-of-operation"></use>
-          </svg>
-          {{ businessHours }}
-        </li>
-        <li>
-          <svg class="svg-email">
-            <use href="#svg-email"></use>
-          </svg>
-          {{ email }}
-        </li>
-        <li>{{ phoneNumber }}</li>
-      </ul>
-    </div>
+    <!-- Contact Info -->
+    <app-contact-info class="contact-info"></app-contact-info>
 
     <!-- Contact Form -->
     <app-contact-form class="contact-form"></app-contact-form>

@@ -1,5 +1,3 @@
-$svg-icon-dimensions: calc(1rem + 0.5vw);
-
 .grid-form-info-text-wrapper {
   display: grid;
   grid-gap: 0;
@@ -27,27 +25,7 @@ $svg-icon-dimensions: calc(1rem + 0.5vw);
       margin-top: 2rem;
     }
     @media(min-width: 768px) { 
-    }
-    & ul {
-      list-style-type: none;
-      & li {
-        align-items: center;
-        display: flex;
-        margin: calc(0.5rem + 0.5vw) 0;
-        & .svg-email {
-          fill: rgba(0, 0, 0, 0.87);
-          height: $svg-icon-dimensions;
-          margin-right: 0.5rem;
-          width: $svg-icon-dimensions;
-        }
-        & .svg-hours-of-operation {
-          fill: white;
-          height: $svg-icon-dimensions;
-          margin-right: 0.5rem;
-          width: $svg-icon-dimensions;
-          stroke: rgba(0, 0, 0, 0.87);
-        }
-      }
+      margin-top: 0;
     }
   }
   & .contact-text {

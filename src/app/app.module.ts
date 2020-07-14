@@ -34,6 +34,7 @@ import { SvgSpriteSheetComponent } from './components/svg-sprite-sheet/svg-sprit
 import { SurfaceCleaningComponent } from './components/our-services/service-components/surface-cleaning/surface-cleaning.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ConsoleLogPipe } from './components/shared/pipes/console-log.pipe';
+import { ContactInfoComponent } from './components/contact/contact-info/contact-info.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ConsoleLogPipe } from './components/shared/pipes/console-log.pipe';
     SurfaceCleaningComponent,
     ContactFormComponent,
     ConsoleLogPipe,
+    ContactInfoComponent,
   ],
   imports: [
     AppRoutingModule,
