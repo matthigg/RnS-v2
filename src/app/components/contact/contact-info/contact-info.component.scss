@@ -1,4 +1,9 @@
 $svg-icon-dimensions: calc(1rem + 0.5vw);
+%svg-icon-attributes {
+  height: $svg-icon-dimensions;
+  margin-right: 0.5rem;
+  width: $svg-icon-dimensions;
+}
 
 ul {
   list-style-type: none;
@@ -8,16 +13,16 @@ ul {
     margin: calc(0.5rem + 0.5vw) 0;
     & .svg-email {
       fill: rgba(0, 0, 0, 0.87);
-      height: $svg-icon-dimensions;
-      margin-right: 0.5rem;
-      width: $svg-icon-dimensions;
+      @extend %svg-icon-attributes;
     }
     & .svg-hours-of-operation {
       fill: white;
-      height: $svg-icon-dimensions;
-      margin-right: 0.5rem;
-      width: $svg-icon-dimensions;
       stroke: rgba(0, 0, 0, 0.87);
+      @extend %svg-icon-attributes;
+    }
+    & .svg-phone {
+      fill: rgba(0, 0, 0, 0.87);
+      @extend %svg-icon-attributes;
     }
   }
 }
