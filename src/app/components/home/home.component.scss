@@ -4,12 +4,6 @@ $mat-card-transition: 0.25s ease-in-out;
   height: calc(100vh - 128px);
 }
 
-.learn-more-wrapper {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
 mat-toolbar {
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
@@ -19,7 +13,11 @@ mat-toolbar {
   justify-content: center;
 }
 
-section.services {
+.section-services {
+  background-color: #fafafa;
+  padding: 1rem;
+}
+.section-contact-form {
   background-color: #fafafa;
   padding: 1rem;
 }

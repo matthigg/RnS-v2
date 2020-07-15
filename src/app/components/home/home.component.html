@@ -1,12 +1,37 @@
-<!-- Landing Page -->
-<section>
+<!-- Section - Landing Page -->
+<section class="section-landing-page">
   <div class="landing-page-spacer"></div>
   <mat-toolbar>
     Pressure Washing Services in Sneads Ferry, NC
   </mat-toolbar>
 </section>
   
-<!-- Services -->
-<section class="services">
+<!-- Section - Services -->
+<section class="section-services">
   <app-service-components></app-service-components>
+</section>
+
+<!-- Section - Contact -->
+<section class="section-contact-form grid-form-info-text-wrapper">
+
+  <!-- Contact Text -->
+  <div class="contact-text">
+    <p>
+      Get a <span>Free Estimate</span> for Pressure Washing Services in {{ city }},
+      {{ state }}!
+    </p>
+    <p>
+      It's quick & easy to request a Free Estimate. Send us a message using the 
+      online form, send us an email, or call us at {{ phoneNumber }}.
+    </p>
+    <p class="contact-text-emphasis">
+      We look forward to speaking with you!
+    </p>
+  </div>
+
+  <!-- Contact Info -->
+  <app-contact-info class="contact-info"></app-contact-info>
+
+  <!-- Contact Form -->
+  <app-contact-form class="contact-form"></app-contact-form>
 </section>

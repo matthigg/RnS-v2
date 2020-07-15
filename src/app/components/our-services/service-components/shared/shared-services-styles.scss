@@ -57,7 +57,7 @@ h1 {
   text-align: center;
 }
 
-section {
+section:not(.section-landing-page) {
   background-color: #fafafa;
   min-height: calc(100vh - 64px);
   @media (max-width: 767.98px) {
