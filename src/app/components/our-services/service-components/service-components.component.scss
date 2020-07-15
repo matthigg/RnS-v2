@@ -103,7 +103,7 @@ $s3-bucket: 'https://rns-static-and-media-files.s3.amazonaws.com/static';
 
 mat-card {
   margin: calc(1rem + 1vw);
-  width: 25vw;
+  width: 20vw;
   & mat-card-actions {
     align-items: center;
     display: flex;
