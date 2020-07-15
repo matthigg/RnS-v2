@@ -1,17 +1,31 @@
-h1 {
-  margin-top: 0;
-  text-align: center;
-}
-
-.wrapper-pictures {
-  & img {
-    height: 15vw;
-    object-fit: cover;
-    width: 20vw;
-  }
-}
-
 section {
   background-color: #fafafa;
   padding: calc(1rem + 1vw);
+  & h1 {
+    font-size: 2.25rem;
+    margin-top: 0;
+    text-align: center;
+  }
+  & mat-toolbar {
+    font-size: 1.75rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  & .category-images-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    & button {
+      margin-bottom: 2rem;
+      padding: 0;
+      & img {
+        height: 15vw;
+        object-fit: cover;
+        width: 20vw;
+        &:first-child {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
 }

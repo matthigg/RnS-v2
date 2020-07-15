@@ -1,9 +1,15 @@
 <section>
   <h1>Let Us RESTORE Your Property To New Condition!</h1>
-  <h2>Houses</h2>
 
-  <div class="wrapper-pictures house">
-    <img src="{{ rootImageURL }}20190603_071305.jpg">
-    <img src="{{ rootImageURL }}20190603_092205.jpg">
-  </div>
+  <ng-container *ngFor="let category of Object.keys(imageURLs)">
+    <mat-toolbar>{{ category | titlecase }}</mat-toolbar>
+    <div class="category-images-wrapper">
+      <button mat-raised-button *ngFor="let imagePair of imageURLs[category]">
+        <img *ngIf="imagePair.before" src="{{ rootImageURL }}{{ imagePair.before }}">
+        <img *ngIf="imagePair.after" src="{{ rootImageURL }}{{ imagePair.after }}">
+        <img *ngIf="imagePair.single" src="{{ rootImageURL }}{{ imagePair.single }}">
+      </button>
+    </div>
+  </ng-container>
+
 </section>
