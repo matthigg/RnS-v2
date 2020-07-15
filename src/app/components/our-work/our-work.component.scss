@@ -3,6 +3,14 @@ h1 {
   text-align: center;
 }
 
+.wrapper-pictures {
+  & img {
+    height: 15vw;
+    object-fit: cover;
+    width: 20vw;
+  }
+}
+
 section {
   background-color: #fafafa;
   padding: calc(1rem + 1vw);
