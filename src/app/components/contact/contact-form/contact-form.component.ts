@@ -5,7 +5,7 @@ import { FormBuilder, FormControl, ValidationErrors, Validators } from '@angular
 import { Subscription } from 'rxjs';
 
 // Services
-import { StateService } from './services/state.service';
+import { ContactFormStateService } from './services/contact-form-state.service';
 
 // Custom Form Validator
 function servicesValidator(formControl: FormControl) : ValidationErrors | null {
@@ -48,7 +48,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   get message() { return this.contactForm.get('message'); }
 
   constructor(
-    private stateService: StateService,
+    private contactFormStateService: ContactFormStateService,
     private fb: FormBuilder,
   ) { }
 
@@ -57,13 +57,13 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this.subscriptions.add(this.stateService.servicesFormControlError
+    this.subscriptions.add(this.contactFormStateService.servicesFormControlError
       .subscribe(response => this.servicesFormControlError = response));
   }
 
   onClickService(): void {
     setTimeout(_ => {
-      this.stateService.servicesFormControlError.next(this.contactForm.controls.services.errors);
+      this.contactFormStateService.servicesFormControlError.next(this.contactForm.controls.services.errors);
     });
   }
 
