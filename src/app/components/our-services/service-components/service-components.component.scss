@@ -111,17 +111,20 @@ mat-card {
     justify-content: center;
     transition: $mat-card-transition;
     & h2 {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       margin: 0 0 0.5rem 0;
     }
-    & .svg-right-arrow {
-      fill: none;
-      height: calc(1rem + 0.15vw);
-      left: 0.25rem;
-      position: relative;
-      stroke: black;
-      width: calc(1rem + 0.15vw);
-      transition: $mat-card-transition;
+    & .learn-more-wrapper {
+      display: inline-flex;
+      & .svg-right-arrow {
+        fill: none;
+        height: calc(1rem + 0.15vw);
+        left: 0.25rem;
+        position: relative;
+        stroke: black;
+        width: calc(1rem + 0.15vw);
+        transition: $mat-card-transition;
+      }
     }
   }
   & mat-card-content {
