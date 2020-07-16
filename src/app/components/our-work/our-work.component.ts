@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-// Models, Services
+// Environment Variables, Models, Services
+import { environment } from '../../../environments/environment';
 import { ImageUrls } from '../../shared/models/image-urls';
 import { OurWorkStateService } from './services/our-work-state.service';
 
@@ -11,7 +12,7 @@ import { OurWorkStateService } from './services/our-work-state.service';
 })
 export class OurWorkComponent implements OnInit {
   Object = Object;
-  rootImageURL: string = 'https://rns-static-and-media-files.s3.amazonaws.com/media/images/';
+  rootImageURL: string = environment.rootImageURL;
   imageURLs: ImageUrls;
 
   constructor(private ourWorkStateService: OurWorkStateService) { }

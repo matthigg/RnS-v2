@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  rootImageURL: 'https://rns-static-and-media-files.s3.amazonaws.com/media/images/',
 };
 
 /*

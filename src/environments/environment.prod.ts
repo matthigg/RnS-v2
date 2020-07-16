@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  rootImageURL: 'https://rns-static-and-media-files.s3.amazonaws.com/media/images/',
 };
