@@ -4,11 +4,15 @@
   <ng-container *ngFor="let category of Object.keys(imageURLs)">
     <mat-toolbar>{{ category | titlecase }}</mat-toolbar>
     <div class="category-images-wrapper">
-      <button mat-raised-button *ngFor="let imagePair of imageURLs[category]">
-        <img *ngIf="imagePair.before" src="{{ rootImageURL }}{{ imagePair.before }}">
-        <img *ngIf="imagePair.after" src="{{ rootImageURL }}{{ imagePair.after }}">
-        <img *ngIf="imagePair.single" src="{{ rootImageURL }}{{ imagePair.single }}">
-      </button>
+      <ng-container *ngFor="let imagePair of imageURLs[category]">
+        <button class="before-and-after-button" mat-raised-button *ngIf="imagePair.before && imagePair.after">
+          <img src="{{ rootImageURL }}{{ imagePair.before }}">
+          <img src="{{ rootImageURL }}{{ imagePair.after }}">
+        </button>
+        <button mat-raised-button *ngIf="imagePair.single">
+          <img src="{{ rootImageURL }}{{ imagePair.single }}">
+        </button>
+      </ng-container>
     </div>
   </ng-container>
 

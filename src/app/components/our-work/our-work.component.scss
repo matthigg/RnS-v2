@@ -1,3 +1,18 @@
+%before-and-after-styling {
+  align-items: center;
+  background-color: black;
+  border-bottom: 2px solid #f3d333;
+  color: white;
+  display: flex;
+  font-size: calc(0.5rem + 0.25vw);
+  font-weight: 400;
+  height: 1.25rem;
+  padding: 0 calc(0.2rem + 0.2vw);
+  position: absolute;
+  bottom: calc(0.25rem + 0.25vw);
+  z-index: 1;
+}
+
 section {
   background-color: #fafafa;
   padding: calc(1rem + 1vw);
@@ -18,12 +33,22 @@ section {
     & button {
       margin-bottom: 2rem;
       padding: 0;
+      &.before-and-after-button::after {
+        content: 'After';
+        right: calc(0.25rem + 0.25vw);
+        @extend %before-and-after-styling;
+      }
+      &.before-and-after-button::before {
+        content: 'Before';
+        left: calc(0.25rem + 0.25vw);
+        @extend %before-and-after-styling
+      }
       & img {
         height: 15vw;
         object-fit: cover;
         width: 20vw;
-        &:first-child {
-          margin-right: 0.5rem;
+        &:nth-child(2) {
+          margin-left: 0.75rem;
         }
       }
     }
