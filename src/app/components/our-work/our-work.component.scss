@@ -46,9 +46,16 @@ section {
       & img {
         height: 15vw;
         object-fit: cover;
-        width: 20vw;
         &:nth-child(2) {
           margin-left: 0.75rem;
+        }
+        @media (max-width: 767.98px) {
+          height: 30vw;
+          width: 40vw;
+        }
+        @media (min-width: 768px) {
+          height: 15vw;
+          width: 20vw;
         }
       }
     }
