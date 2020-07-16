@@ -5,11 +5,18 @@
     <mat-toolbar>{{ category | titlecase }}</mat-toolbar>
     <div class="category-images-wrapper">
       <ng-container *ngFor="let imagePair of imageURLs[category]">
-        <button class="before-and-after-button" mat-raised-button *ngIf="imagePair.before && imagePair.after">
+        <button 
+          class="before-and-after-button" 
+          mat-raised-button 
+          (click)="onClickPicturePair(rootImageURL, imagePair.before, imagePair.after)"
+          *ngIf="imagePair.before && imagePair.after">
           <img src="{{ rootImageURL }}{{ imagePair.before }}">
           <img src="{{ rootImageURL }}{{ imagePair.after }}">
         </button>
-        <button mat-raised-button *ngIf="imagePair.single">
+        <button 
+          mat-raised-button 
+          *ngIf="imagePair.single"
+          (click)="onClickPictureSingle(rootImageURL, imagePair.single)">
           <img src="{{ rootImageURL }}{{ imagePair.single }}">
         </button>
       </ng-container>

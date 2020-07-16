@@ -21,4 +21,11 @@ export class OurWorkComponent implements OnInit {
     this.imageURLs = this.ourWorkStateService.fetchImageURLs();
   }
 
+  onClickPicturePair(rootImageURL: string, before: string, after: string) {
+    console.log('--- :', rootImageURL, before, after)
+  }
+
+  onClickPictureSingle(rootImageURL: string, single: string) {
+    console.log('--- :', rootImageURL, single)
+  }
 }
