@@ -1,7 +1,7 @@
 %before-and-after-styling {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.9);
-  border-left: 2px solid rgba(243, 211, 51, 0.9);
+  border-left: 2px solid rgba(243, 211, 51, 1);
   color: white;
   display: flex;
   font-size: calc(0.5rem + 0.25vw);
@@ -23,7 +23,7 @@ section {
   }
   & mat-toolbar {
     background-color: rgba(0, 0, 0, 0.9);
-    border-left: 10px solid rgba(243, 211, 51, 0.9);
+    border-left: 10px solid rgba(243, 211, 51, 1);
     color: #fafafa;
     font-size: 1.75rem;
     // justify-content: center;

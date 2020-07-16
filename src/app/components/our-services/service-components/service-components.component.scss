@@ -119,9 +119,9 @@ mat-card {
       & .svg-right-arrow {
         fill: none;
         height: calc(1rem + 0.15vw);
-        left: 0.25rem;
+        left: 0.2rem;
         position: relative;
-        stroke: black;
+        stroke: rgba(0, 0, 0, 0.87);
         width: calc(1rem + 0.15vw);
         transition: $mat-card-transition;
       }
@@ -145,7 +145,7 @@ mat-card {
     & mat-card-actions {
       color: #f3d333;
       transition: $mat-card-transition;
-      & .svg-right-arrow {
+      & .learn-more-wrapper .svg-right-arrow {
         left: 0.5rem;
         stroke: #f3d333;
         transition: $mat-card-transition;
