@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -37,6 +38,7 @@ import { ContactInfoComponent } from './components/contact/contact-info/contact-
 
 // Pipes
 import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
+import { PictureDialogComponent } from './components/our-work/dialog/picture-dialog/picture-dialog.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
     ContactFormComponent,
     ConsoleLogPipe,
     ContactInfoComponent,
+    PictureDialogComponent,
   ],
+  entryComponents: [ PictureDialogComponent ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -66,6 +70,7 @@ import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
+    MatDialogModule,
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,

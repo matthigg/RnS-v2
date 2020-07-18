@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+// Components
+import { PictureDialogComponent } from './dialog/picture-dialog/picture-dialog.component';
 
 // Environment Variables, Models, Services
-import { environment } from '../../../environments/environment';
+import { environment } from 'src/environments/environment';
 import { ImageUrls } from '../../shared/models/image-urls';
+import { PictureDialogImage } from '../../shared/models/picture-dialog-image';
 import { OurWorkStateService } from './services/our-work-state.service';
 
 @Component({
@@ -15,17 +20,32 @@ export class OurWorkComponent implements OnInit {
   rootImageURL: string = environment.rootImageURL;
   imageURLs: ImageUrls;
 
-  constructor(private ourWorkStateService: OurWorkStateService) { }
+  constructor(
+    public dialog: MatDialog,
+    private ourWorkStateService: OurWorkStateService
+  ) { }
 
   ngOnInit(): void {
     this.imageURLs = this.ourWorkStateService.fetchImageURLs();
   }
 
-  onClickPicturePair(rootImageURL: string, before: string, after: string) {
-    console.log('--- :', rootImageURL, before, after)
+  onClickPicturePair(before: string, after: string) {
+    this.openDialog({
+      before,
+      after,
+      single: null,
+    });
   }
 
-  onClickPictureSingle(rootImageURL: string, single: string) {
-    console.log('--- :', rootImageURL, single)
+  onClickPictureSingle(single: string) {
+    this.openDialog({
+      before: null,
+      after: null,
+      single,
+    });
+  }
+
+  openDialog(data: PictureDialogImage): void {
+    const dialogRef = this.dialog.open(PictureDialogComponent, { data });
   }
 }

@@ -8,7 +8,7 @@
         <button 
           class="before-and-after-button" 
           mat-raised-button 
-          (click)="onClickPicturePair(rootImageURL, imagePair.before, imagePair.after)"
+          (click)="onClickPicturePair(imagePair.before, imagePair.after)"
           *ngIf="imagePair.before && imagePair.after">
           <img src="{{ rootImageURL }}{{ imagePair.before }}">
           <img src="{{ rootImageURL }}{{ imagePair.after }}">
@@ -16,7 +16,7 @@
         <button 
           mat-raised-button 
           *ngIf="imagePair.single"
-          (click)="onClickPictureSingle(rootImageURL, imagePair.single)">
+          (click)="onClickPictureSingle(imagePair.single)">
           <img src="{{ rootImageURL }}{{ imagePair.single }}">
         </button>
       </ng-container>
