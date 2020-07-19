@@ -1,0 +1,25 @@
+img {
+  height: 15vw;
+  object-fit: cover;
+  @media (max-width: 767.98px) {
+    height: 100%;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+::ng-deep {
+  & mat-dialog-container {
+    background: red;
+    overflow: scroll;
+  }
+  & .cdk-focus-trap-anchor {
+    overflow: scroll;
+  }
+  & .cdk-overlay-pane {
+    overflow-y: scroll;
+  }
+}
