@@ -46,7 +46,6 @@ section {
         @extend %before-and-after-styling
       }
       & img {
-        height: 15vw;
         object-fit: cover;
         &:nth-child(2) {
           margin-left: 0.75rem;
