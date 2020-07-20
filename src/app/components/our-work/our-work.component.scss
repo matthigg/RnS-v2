@@ -37,7 +37,7 @@ section {
       padding: 0;
       &.before-and-after-button::after {
         content: 'After';
-        right: calc(0.25rem + 0.25vw);
+        left: calc(20vw + 0.75rem + 0.25rem + 0.25vw);
         @extend %before-and-after-styling;
       }
       &.before-and-after-button::before {
