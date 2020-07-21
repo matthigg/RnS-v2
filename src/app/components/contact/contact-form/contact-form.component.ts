@@ -19,7 +19,7 @@ function servicesValidator(formControl: FormControl) : ValidationErrors | null {
 })
 export class ContactFormComponent implements OnDestroy, OnInit {
   servicesFormControlError: null | { noSelectedService: boolean } = null;
-  private subscriptions: Subscription = new Subscription()
+  private subscriptions: Subscription = new Subscription();
 
   // Reactive Form
   contactForm = this.fb.group({
