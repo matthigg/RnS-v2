@@ -19,7 +19,9 @@ export class PictureDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("--- data:", this.data)
   }
 
+  onClose() {
+    this.dialogRef.close()
+  }
 }
