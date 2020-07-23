@@ -39,6 +39,7 @@ import { ContactInfoComponent } from './components/contact/contact-info/contact-
 // Pipes
 import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
 import { PictureDialogComponent } from './components/our-work/dialog/picture-dialog/picture-dialog.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { PictureDialogComponent } from './components/our-work/dialog/picture-dia
     ConsoleLogPipe,
     ContactInfoComponent,
     PictureDialogComponent,
+    FooterComponent,
   ],
   entryComponents: [ PictureDialogComponent ],
   imports: [
