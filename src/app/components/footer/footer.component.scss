@@ -9,8 +9,19 @@ $off-white: rgba(255, 255, 255, 0.87);
 section {
   background-color: rgba(0, 0, 0, 0.75);
   min-height: 25vh;
+  padding: 1rem;
   & .footer-text {
     color: $off-white;
+    text-align: center;
+    & h2 {
+      margin-top: 0;
+    }
+    & p {
+      font-size: 1.25rem;
+      & span {
+        font-weight: 500;
+      }
+    }
   }
 }
 
