@@ -1,0 +1,38 @@
+$svg-icon-dimensions: calc(1rem + 0.5vw);
+$off-white: rgba(255, 255, 255, 0.87);
+%svg-icon-attributes {
+  height: $svg-icon-dimensions;
+  margin-right: 0.5rem;
+  width: $svg-icon-dimensions;
+}
+
+section {
+  background-color: rgba(0, 0, 0, 0.75);
+  min-height: 25vh;
+  & .footer-text {
+    color: $off-white;
+  }
+}
+
+::ng-deep section.footer {
+  & li {
+    color: $off-white;
+    & .svg-email {
+      fill: $off-white !important;
+      @extend %svg-icon-attributes;
+    }
+    & .svg-hours-of-operation {
+      fill: none;
+      stroke: $off-white !important;
+      @extend %svg-icon-attributes;
+    }
+    & .svg-phone {
+      fill: $off-white !important;
+      @extend %svg-icon-attributes;
+    }
+    & .svg-location-marker {
+      fill: $off-white !important;
+      @extend %svg-icon-attributes;
+    }
+  }
+}

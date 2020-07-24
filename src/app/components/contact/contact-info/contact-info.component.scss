@@ -1,4 +1,5 @@
 $svg-icon-dimensions: calc(1rem + 0.5vw);
+$svg-icon-tint: rgba(0, 0, 0, 0.87);
 %svg-icon-attributes {
   height: $svg-icon-dimensions;
   margin-right: 0.5rem;
@@ -12,20 +13,20 @@ ul {
     display: flex;
     margin: calc(0.5rem + 0.5vw) 0;
     & .svg-email {
-      fill: rgba(0, 0, 0, 0.87);
+      fill: $svg-icon-tint;
       @extend %svg-icon-attributes;
     }
     & .svg-hours-of-operation {
-      fill: white;
-      stroke: rgba(0, 0, 0, 0.87);
+      fill: none;
+      stroke: $svg-icon-tint;
       @extend %svg-icon-attributes;
     }
     & .svg-phone {
-      fill: rgba(0, 0, 0, 0.87);
+      fill: $svg-icon-tint;
       @extend %svg-icon-attributes;
     }
     & .svg-location-marker {
-      fill: rgba(0, 0, 0, 0.87);
+      fill: $svg-icon-tint;
       @extend %svg-icon-attributes;
     }
   }
