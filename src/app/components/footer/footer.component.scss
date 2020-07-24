@@ -85,6 +85,12 @@ section.footer {
         font-size: 2rem;
         line-height: 0;
       }
+      &:hover {
+        background-color: #f3d333;
+        & i {
+          color: rgba(0, 0, 0, 0.75);
+        }
+      }
     }
   }
   & .recaptcha-disclaimer {
