@@ -9,9 +9,10 @@ $off-white: rgba(255, 255, 255, 0.87);
 section.footer {
   background-color: rgba(0, 0, 0, 0.75);
   display: grid;
-  grid-auto-rows: minmax(5vh, auto);
+  grid-auto-rows: minmax(0, auto);
   grid-template-areas:
     'txtwr googm svgad'
+    'spacr spacr spacr'
     'rcapt cpyrt btnrt';
   grid-template-columns: 1fr 1fr 1fr;
   min-height: 25vh;
@@ -96,6 +97,11 @@ section.footer {
   & .recaptcha-disclaimer {
     grid-area: rcapt;
   }
+}
+
+.spacer {
+  grid-area: spacr;
+  height: 3vh;
 }
 
 ::ng-deep section.footer {
