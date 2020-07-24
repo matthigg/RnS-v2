@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  googleMapsSRC: string = 'https://www.google.com/maps/d/embed?mid=1M99_6FQvTVBMWYAtWUuxLdrTQzM&hl=en&z=9';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onScrollToTop(): void {
+    
   }
 
 }

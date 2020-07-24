@@ -1,7 +1,7 @@
 <section class="footer">
 
   <!-- Footer Text -->
-  <div class="footer-text">
+  <div class="text-wrapper">
     <h2>R & S PRESSURE WASHING</h2>
     <p>
       Call us today for a <span>Free Estimate!</span>
@@ -10,18 +10,39 @@
   </div>
 
   <!-- Google Map -->
-  <div class="footer-google-map">google map</div>
+  <div class="google-map-wrapper">
+    <iframe crossorigin="anonymouse" src="https://www.google.com/maps/d/embed?mid=1M99_6FQvTVBMWYAtWUuxLdrTQzM&hl=en&z=9"></iframe>
+  </div>
 
   <!-- SVG Ad Icons -->
-  <div class="svg-ad-icons">ad icons</div>
-
-  <!-- Copyright -->
-  <div class="copyright">copyright</div>
-
-  <!-- Return To Top Button -->
-  <div class="button-return-to-top">button return to top</div>
+  <div class="svg-ad-icons">
+    <svg class="svg-google">
+      <use href="#svg-google"></use>
+    </svg>
+    <svg class="svg-facebook">
+      <use href="#svg-facebook"></use>
+    </svg>
+  </div>
 
   <!-- reCaptcha Disclaimer -->
-  <div class="recaptcha-disclaimer">recaptcha disclaimer</div>
+  <div class="recaptcha-disclaimer">
+    This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+  </div>
+
+  <!-- Copyright -->
+  <div class="copyright">© 2019 R & S Pressure Washing</div>
+
+  <!-- Return To Top Button -->
+  <div class="button-return-to-top">
+    <button 
+      aria-label="Return to top" 
+      mat-fab 
+      type="button" 
+      (click)="onScrollToTop()">
+      <i class="material-icons">north</i>
+    </button>
+  </div>
 
 </section>
