@@ -40,6 +40,10 @@ section.footer {
       height: 100%;
       width: 100%;
     }
+    @media (max-width: 768px) {
+      height: 40vh;
+      padding: 0.5rem 2rem;
+    }
   }
   & .svg-ad-icons {
     grid-area: svgad;
@@ -64,6 +68,9 @@ section.footer {
       color: #f3d333;
       text-decoration: none;
       transition: 2s ease-in;
+    }
+    @media (max-width: 768px) {
+      padding: 0.5rem 2rem;
     }
   }
   & .copyright {
@@ -105,6 +112,7 @@ section.footer {
     'cpyrt' 
     'btnrt';
     grid-template-columns: 1fr;
+    padding: 2rem 0 0 0;
   }
   @media (min-width: 768px) and (max-width: 999.98px) {
     grid-template-areas:

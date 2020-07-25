@@ -20,5 +20,4 @@ export class FooterComponent implements OnInit {
       behavior: 'smooth',
     });
   }
-
 }
