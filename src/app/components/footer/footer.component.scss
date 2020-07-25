@@ -23,6 +23,7 @@ section.footer {
     padding: 0.5rem;
     @extend %flex-box-column-centered;
     & h2 {
+      font-family: 'Stencil';
       margin-top: 0;
     }
     & p {

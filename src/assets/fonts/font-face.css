@@ -1,0 +1,6 @@
+/* https://stackoverflow.com/questions/56663294/how-to-use-local-font-family-in-angular-8 */
+
+@font-face {
+  font-family: 'Stencil';
+  src: url('./STENCIL.woff');
+}
