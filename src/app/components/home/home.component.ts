@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+// RxJS
+import { Subscription } from 'rxjs';
+
 // Services
 import { BusinessInformationService } from '../../services/business-information.service';
+import { WindowSizeService } from '../../services/window-size.service';
 
 @Component({
   selector: 'app-home',
@@ -20,10 +24,16 @@ export class HomeComponent implements OnInit {
   state: string = this.businessInformationService.state;
   zipcode: string = this.businessInformationService.zipcode;
   window = window;
+  private subscriptions: Subscription = new Subscription();
+  private windowSize = null;
 
-  constructor(public businessInformationService: BusinessInformationService) { }
+  constructor(
+    public businessInformationService: BusinessInformationService,
+    private windowSizeService: WindowSizeService
+  ) { }
 
   ngOnInit(): void {
+    this.subscriptions.add(this.windowSizeService.windowSize.subscribe(response => this.windowSize = response));
   }
 
 }
