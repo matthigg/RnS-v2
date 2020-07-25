@@ -1,19 +1,20 @@
-import { Injectable, Inject, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 
 // RxJS
 import { BehaviorSubject, fromEvent, Subscription } from 'rxjs';
 import { auditTime, map } from 'rxjs/operators';
 
-export interface WindowSize {
-  height: number,
-  width: number
-}
+// Models
+import { WindowSize } from '../shared/models/window-size';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WindowSizeService implements OnDestroy {
-  windowSize = new BehaviorSubject(null);
+  windowSize: BehaviorSubject<WindowSize> = new BehaviorSubject<WindowSize>({ 
+    height: window.innerHeight, 
+    width: window.innerWidth 
+  });
   private subscriptions: Subscription = new Subscription();
 
   constructor() {
