@@ -23,12 +23,16 @@ section.footer {
     padding: 0.5rem;
     @extend %flex-box-column-centered;
     & h2 {
+      color: #f3d333;
       font-family: 'Stencil';
+      font-size: 1.75rem;
       margin-top: 0;
     }
     & p {
       font-size: 1.25rem;
       & span {
+        color: #f3d333;
+        font-style: italic;
         font-weight: 500;
       }
     }

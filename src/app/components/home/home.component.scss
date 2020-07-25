@@ -2,6 +2,9 @@ $mat-card-transition: 0.25s ease-in-out;
 
 .landing-page-spacer {
   height: calc(100vh - 128px);
+  @media (max-width: 598.98px) {
+    height: calc(100vh - 114px + 3px);
+  }
 }
 
 mat-toolbar {
@@ -9,8 +12,16 @@ mat-toolbar {
   color: white;
   display: flex;
   font-style: italic;
-  font-size: 1.15rem;
   justify-content: center;
+  @media (max-width: 359.98px) {
+    font-size: 0.75rem;
+  }
+  @media (min-width: 360px) and (max-width: 767.98px) {
+    font-size: 0.95rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.15rem;
+  }
 }
 
 .section-services {
