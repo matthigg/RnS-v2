@@ -52,10 +52,16 @@ section.footer {
     & .svg-google {
       height: calc(3.5rem + 2.5vw);
       margin: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
     & .svg-facebook {
       height: calc(3rem + 2.5vw);
       margin: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   & .recaptcha-disclaimer {
