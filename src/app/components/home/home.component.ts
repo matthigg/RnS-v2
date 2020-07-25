@@ -17,13 +17,6 @@ import { WindowSize } from '../../shared/models/window-size';
   ]
 })
 export class HomeComponent implements OnDestroy, OnInit {
-  address: string = this.businessInformationService.address;
-  businessHours: string = this.businessInformationService.businessHours;
-  city: string = this.businessInformationService.city;
-  email: string = this.businessInformationService.email;
-  phoneNumber: string = this.businessInformationService.phoneNumber;
-  state: string = this.businessInformationService.state;
-  zipcode: string = this.businessInformationService.zipcode;
   private subscriptions: Subscription = new Subscription();
   private windowSize: WindowSize | null = null;
 

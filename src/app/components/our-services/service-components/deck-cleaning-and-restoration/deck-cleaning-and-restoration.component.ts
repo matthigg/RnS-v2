@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
-// Services
+// RxJS
+import { Subscription } from 'rxjs';
+
+// Models, Services
 import { BusinessInformationService } from '../../../../services/business-information.service';
+import { WindowSizeService } from '../../../../services/window-size.service';
+import { WindowSize } from '../../../../shared/models/window-size';
 
 @Component({
   selector: 'app-deck-cleaning-and-restoration',
@@ -11,18 +16,22 @@ import { BusinessInformationService } from '../../../../services/business-inform
     '../shared/shared-services-styles.scss',
   ]
 })
-export class DeckCleaningAndRestorationComponent implements OnInit {
-  address: string = this.businessInformationService.address;
-  businessHours: string = this.businessInformationService.businessHours;
-  city: string = this.businessInformationService.city;
-  email: string = this.businessInformationService.email;
-  phoneNumber: string = this.businessInformationService.phoneNumber;
-  state: string = this.businessInformationService.state;
-  zipcode: string = this.businessInformationService.zipcode;
+export class DeckCleaningAndRestorationComponent implements OnDestroy, OnInit {
+  private subscriptions: Subscription = new Subscription();
+  private windowSize: WindowSize | null = null;
 
-  constructor(public businessInformationService: BusinessInformationService) { }
+  constructor(
+    public businessInformationService: BusinessInformationService,
+    private windowSizeService: WindowSizeService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
+  ngOnInit(): void {
+    this.subscriptions.add(this.windowSizeService.windowSize.subscribe(
+      response => this.windowSize = response
+    ));
+  }
 }
