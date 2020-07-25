@@ -30,7 +30,7 @@
   </div>
 
   <!-- Contact Info -->
-  <app-contact-info class="contact-info"></app-contact-info>
+  <app-contact-info class="contact-info" *ngIf="windowSize?.width >= 768px"></app-contact-info>
 
   <!-- Contact Form -->
   <app-contact-form class="contact-form"></app-contact-form>
