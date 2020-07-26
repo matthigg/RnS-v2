@@ -17,6 +17,9 @@ import { WindowSize } from '../../shared/models/window-size';
   ]
 })
 export class ContactComponent implements OnDestroy, OnInit {
+  city: string = this.businessInformationService.city;
+  phoneNumber: string = this.businessInformationService.phoneNumber;
+  state: string = this.businessInformationService.state;
   private subscriptions: Subscription = new Subscription();
   private windowSize: WindowSize | null = null;
 

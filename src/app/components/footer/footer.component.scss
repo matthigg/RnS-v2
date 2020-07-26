@@ -26,14 +26,11 @@ section.footer {
       color: #f3d333;
       font-family: 'Stencil';
       margin-top: 0;
-      @media (max-width: 379.98px) {
-        font-size: 1.25rem;
+      @media (max-width: 1299.98px) {
+        font-size: 1.3rem;
       }
-      @media (min-width: 380px) and (max-width: 899.98px) {
+      @media (min-width: 1300px) {
         font-size: 1.5rem;
-      }
-      @media (min-width: 900px) {
-        font-size: 1.75rem;
       }
     }
     & p {
@@ -125,8 +122,8 @@ section.footer {
   @media (max-width: 767.98px) {
     grid-template-areas:
     'txtwr'
-    'svgad'
     'googm'
+    'svgad'
     'rcapt'
     'cpyrt' 
     'btnrt';
