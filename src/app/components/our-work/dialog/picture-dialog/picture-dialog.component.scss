@@ -15,11 +15,16 @@ img {
 }
 
 mat-toolbar {
+  background-color: #333;
+  border-left: 10px solid #f3d333;
+  color: #f3d333;
   display: flex;
+  font-family: 'Stencil';
   justify-content: space-between;
+  margin: 0 0 1rem 0;
   & .svg-icon-cancel {
     fill: none;
-    stroke: #999;
+    stroke: #f3d333;
     stroke-width: 0.75rem;
     height: 1.25rem;
     width: 1.25rem;
