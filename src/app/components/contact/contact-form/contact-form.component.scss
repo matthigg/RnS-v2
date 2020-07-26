@@ -6,19 +6,6 @@
 .form-field-sq-ft-select { grid-area: ffsqfs; }
 .form-field-type-of-exterior { grid-area: fftpex; }
 
-h3 {
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-h4 {
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 14px;
-  font-weight: 400;
-  margin-top: 0;
-  text-align: center;
-}
-
 mat-card-actions {
   display: flex;
   justify-content: center;
@@ -42,14 +29,6 @@ mat-card-content {
       'fftxta';
     grid-template-columns: 1fr;
   }
-
-  // grid-template-areas:
-  //   'ffname ffemal'
-  //   'ffphon ffsqfi'
-  //   'spacer ffsqfs'
-  //   'ffnmst fftpex'
-  //   'svcwrp fftxta';
-
   @media (min-width: 1011px) {
     grid-template-areas:
     'ffname svcwrp'
@@ -67,27 +46,35 @@ mat-card-content {
 
 mat-card-header {
   justify-content: center;
-}
-
-mat-card-subtitle {
-  text-align: center;
-}
-
-mat-checkbox {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-mat-divider {
-  grid-area: dividr;
+  & mat-card-subtitle {
+    text-align: center;
+  }
 }
 
 mat-form-field {
   width: 100%;
+  &.textarea-form-field {
+    grid-area: fftxta;
+    margin-top: 1rem;
+    & textarea {
+      min-height: 2rem;
+    }
+  }
 }
 
 .services-wrapper {
   grid-area: svcwrp;
+  & h3 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  & h4 {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+  }
   & .services-error-wrapper {
     height: 12px;
     margin-bottom: 1rem;
@@ -108,11 +95,3 @@ mat-form-field {
 }
 
 .spacer { grid-area: spacer; }
-
-.textarea-form-field {
-  grid-area: fftxta;
-  margin-top: 1rem;
-  & textarea {
-    min-height: 2rem;
-  }
-}
