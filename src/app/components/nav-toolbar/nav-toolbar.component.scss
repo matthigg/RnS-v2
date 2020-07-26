@@ -1,11 +1,27 @@
-mat-toolbar {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 2rem;
-}
+$button-transition: all 0.2s ease-in;
 
 nav {
   position: fixed;
   width: 100%;
   z-index: 2;
+  & mat-toolbar {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    & button {
+      border-bottom: 2px solid transparent;
+      border-radius: 4px 4px 0 0;
+      color: white;
+      transition: $button-transition;
+      &.active-route {
+        border-bottom: 2px solid #f3d333;
+      }
+      &:hover {
+        border-bottom: 2px solid #f3d333;
+        color: #f3d333;
+        transition: $button-transition;
+      }
+    }
+  }
 }
