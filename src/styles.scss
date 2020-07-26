@@ -11,6 +11,10 @@ section {
 
 h1 {
   color: #333;
-  margin-top: 3rem;
+  margin: 3rem 0;
   text-align: center;
+  & span {
+    color: #f3d333;
+    font-family: 'Stencil';
+  }
 }
