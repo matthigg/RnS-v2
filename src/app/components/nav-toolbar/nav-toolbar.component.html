@@ -1,5 +1,10 @@
 <nav>
-  <mat-toolbar>
+  <div [ngClass]="{
+    'expanded': pageOffset.pageYOffset === 0,
+    'rns-logo': true
+  }">
+  </div>
+  <mat-toolbar [ngClass]="{ 'expanded': pageOffset.pageYOffset === 0 }">
     <button 
       mat-button 
       type="button" 
