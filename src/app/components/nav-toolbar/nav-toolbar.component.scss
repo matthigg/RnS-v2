@@ -19,11 +19,15 @@ nav {
     &.expanded {
       height: calc(64px + 1rem);
       transition: $mat-toolbar-transition;
+      & button {
+        font-size: 1rem;
+      }
     }
     & button {
       border-bottom: 2px solid transparent;
       border-radius: 4px 4px 0 0;
       color: white;
+      font-size: 0.85rem;
       transition: $button-transition;
       &.active-route {
         border-bottom: 2px solid #f3d333;
