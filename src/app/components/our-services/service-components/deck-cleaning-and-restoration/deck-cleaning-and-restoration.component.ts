@@ -12,7 +12,7 @@ import { WindowSize } from '../../../../shared/models/window-size';
   templateUrl: './deck-cleaning-and-restoration.component.html',
   styleUrls: [
     './deck-cleaning-and-restoration.component.scss',
-    '../shared/shared-services-styles.scss',
+    '../../../../shared/shared-services-styles.scss',
   ]
 })
 export class DeckCleaningAndRestorationComponent implements OnDestroy, OnInit {

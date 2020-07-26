@@ -12,7 +12,7 @@ import { WindowSize } from '../../../../shared/models/window-size';
   templateUrl: './outdoor-stain-removal.component.html',
   styleUrls: [
     './outdoor-stain-removal.component.scss',
-    '../shared/shared-services-styles.scss',
+    '../../../../shared/shared-services-styles.scss',
   ]
 })
 export class OutdoorStainRemovalComponent implements OnDestroy, OnInit {

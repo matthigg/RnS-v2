@@ -15,7 +15,6 @@ import { OurWorkComponent } from './components/our-work/our-work.component';
 import { ServicesComponent } from './components/our-services/services.component';
 
 const routes: Routes = [
-  // { path: 'home',     component: HomeComponent },
   { path: 'about',    component: AboutComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'services/fence-cleaning', component: FenceCleaningComponent },

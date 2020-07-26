@@ -13,7 +13,7 @@ import { WindowSize } from '../../shared/models/window-size';
   templateUrl: './contact.component.html',
   styleUrls: [
     './contact.component.scss',
-    '../our-services/service-components/shared/shared-services-styles.scss',
+    '../../shared/shared-services-styles.scss',
   ]
 })
 export class ContactComponent implements OnDestroy, OnInit {

@@ -12,7 +12,7 @@ import { WindowSize } from '../../../../shared/models/window-size';
   templateUrl: './fence-cleaning.component.html',
   styleUrls: [
     './fence-cleaning.component.scss', 
-    '../shared/shared-services-styles.scss',
+    '../../../../shared/shared-services-styles.scss',
   ]
 })
 export class FenceCleaningComponent implements OnDestroy, OnInit {

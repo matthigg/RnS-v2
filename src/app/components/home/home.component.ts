@@ -13,7 +13,7 @@ import { WindowSize } from '../../shared/models/window-size';
   templateUrl: './home.component.html',
   styleUrls: [
     './home.component.scss',
-    '../our-services/service-components/shared/shared-services-styles.scss',
+    '../../shared/shared-services-styles.scss',
   ]
 })
 export class HomeComponent implements OnDestroy, OnInit {

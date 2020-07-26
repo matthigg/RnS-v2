@@ -12,7 +12,7 @@ import { WindowSize } from '../../../../shared/models/window-size';
   templateUrl: './soft-wash.component.html',
   styleUrls: [
     './soft-wash.component.scss',
-    '../shared/shared-services-styles.scss',
+    '../../../../shared/shared-services-styles.scss',
   ]
 })
 export class SoftWashComponent implements OnDestroy, OnInit {

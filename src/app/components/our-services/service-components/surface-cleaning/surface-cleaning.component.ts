@@ -12,7 +12,7 @@ import { WindowSize } from '../../../../shared/models/window-size';
   templateUrl: './surface-cleaning.component.html',
   styleUrls: [
     './surface-cleaning.component.scss',
-    '../shared/shared-services-styles.scss',
+    '../../../../shared/shared-services-styles.scss',
   ]
 })
 export class SurfaceCleaningComponent implements OnDestroy, OnInit {
