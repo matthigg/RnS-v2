@@ -19,8 +19,8 @@ import { WindowSize } from '../../../../shared/models/window-size';
 export class OutdoorStainRemovalComponent implements OnDestroy, OnInit {
   city: string = this.businessInformationService.city;
   state: string = this.businessInformationService.state;
+  windowSize: WindowSize | null = null;
   private subscriptions: Subscription = new Subscription();
-  private windowSize: WindowSize | null = null;
 
   constructor(
     private businessInformationService: BusinessInformationService,

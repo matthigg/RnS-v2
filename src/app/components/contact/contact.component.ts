@@ -20,8 +20,8 @@ export class ContactComponent implements OnDestroy, OnInit {
   city: string = this.businessInformationService.city;
   phoneNumber: string = this.businessInformationService.phoneNumber;
   state: string = this.businessInformationService.state;
+  windowSize: WindowSize | null = null;
   private subscriptions: Subscription = new Subscription();
-  private windowSize: WindowSize | null = null;
 
   constructor(
     public businessInformationService: BusinessInformationService,
