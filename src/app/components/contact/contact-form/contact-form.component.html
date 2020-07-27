@@ -115,11 +115,12 @@
     <!-- Submit Button -->
     <mat-card-actions>
       <button 
-        color="accent"
+        #submitButton
         mat-raised-button 
         type="submit"
-        [disabled]="contactForm.invalid">
-        Get Your Free Estimate!
+        [disabled]="contactForm.invalid"
+        [ngClass]="{ 'active': !submitButton.disabled }">
+        Get Your Free Estimate! {{ submitButton.disabled | consoleLog }}
       </button>
     </mat-card-actions>
   </mat-card>

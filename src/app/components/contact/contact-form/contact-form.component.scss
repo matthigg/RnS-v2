@@ -9,10 +9,17 @@
 mat-card {
   border: 1px solid rgba(0, 0, 0, 0.54);
   & mat-card-actions:last-child {
+    border: 2px solid transparent;
     display: flex;
     justify-content: center;
     margin-bottom: 0.5rem;
     padding-top: 0;
+    & button.active {
+      background-color: #333;
+      border: 2px solid #f3d333;
+      border-radius: 6px;
+      color: #fafafa;
+    }
   }
   & mat-card-content {
     column-gap: 1.25rem;
