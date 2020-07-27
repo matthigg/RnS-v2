@@ -1,16 +1,28 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
+// https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+$mat-custom-yellow: (
+  100: #f3d333,
+  500: #f3d333,
+  700: #f3d333,
+  contrast: (
+    100: $black-87-opacity,
+    500: white,
+    700: white,
+  )
+);
+
 $theme-primary: mat-palette($mat-blue, 800);
-$theme-accent: mat-palette($mat-yellow);
+$theme-accent: mat-palette($mat-custom-yellow);
 $theme-warn: mat-palette($mat-red);
 $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 @include angular-material-theme($theme);
 
-$dark-theme-primary: mat-palette($mat-blue);
-$dark-theme-accent: mat-palette($mat-green);
-$dark-theme-warn: mat-palette($mat-orange);
-$dark-theme: mat-dark-theme($dark-theme-primary, $dark-theme-accent, $dark-theme-warn);
-.dark-theme {
-  @include angular-material-theme($dark-theme);
-}
+// $dark-theme-primary: mat-palette($mat-blue);
+// $dark-theme-accent: mat-palette($mat-green);
+// $dark-theme-warn: mat-palette($mat-orange);
+// $dark-theme: mat-dark-theme($dark-theme-primary, $dark-theme-accent, $dark-theme-warn);
+// .dark-theme {
+//   @include angular-material-theme($dark-theme);
+// }
