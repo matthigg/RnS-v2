@@ -29,9 +29,9 @@
               "src/_redirects"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
-              "src/assets/fonts/font-face.css"
+              "src/assets/fonts/font-face.css",
+              "src/custom-themes.scss"
             ],
             "scripts": []
           },
@@ -96,8 +96,8 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/fonts/font-face.css"
             ],
             "scripts": []
           }
