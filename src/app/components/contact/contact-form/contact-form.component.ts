@@ -4,8 +4,9 @@ import { FormBuilder, FormControl, ValidationErrors, Validators } from '@angular
 // RxJS
 import { Subscription } from 'rxjs';
 
-// Services
+// Environment Variables, Services
 import { ContactFormStateService } from './services/contact-form-state.service';
+import { SendDataService } from './services/send-data.service';
 
 // Custom Form Validator
 function servicesValidator(formControl: FormControl) : ValidationErrors | null {
@@ -50,6 +51,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   constructor(
     private contactFormStateService: ContactFormStateService,
     private fb: FormBuilder,
+    private sendDataService: SendDataService,
   ) { }
 
   ngOnDestroy(): void {
@@ -68,6 +70,13 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   }
 
   onSubmit(): void {
-    console.log('--- contactForm:', this.contactForm);
+    this.subscriptions.add(this.sendDataService.sendData(this.contactForm.value).subscribe(
+      response => {
+        console.log('--- response:', response)
+      },
+      error => {
+        console.log('--- error:', error)
+      }
+    ));
   }
 }
