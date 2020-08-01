@@ -43,6 +43,7 @@ import { ContactInfoComponent } from './components/contact/contact-info/contact-
 import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
 import { PictureDialogComponent } from './components/our-work/dialog/picture-dialog/picture-dialog.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FloatingButtonsComponent } from './components/floating-buttons/floating-buttons.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ContactInfoComponent,
     PictureDialogComponent,
     FooterComponent,
+    FloatingButtonsComponent,
   ],
   entryComponents: [ PictureDialogComponent ],
   imports: [
