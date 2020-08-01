@@ -1,7 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-// Environment Variables
+// RxJS
+import { Observable } from 'rxjs';
+
+// Environment Variables, Models
+import { ContactFormData } from '../../../../shared/models/contact-form-data';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,15 +14,13 @@ import { environment } from 'src/environments/environment';
 export class SendDataService {
   httpOptions = {
     headers: new HttpHeaders({
-      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
     })
   }
 
   constructor(private http: HttpClient) { }
 
-  sendData(data: any): any {
-    console.log('--- data:', data)
+  sendData(data: ContactFormData): Observable<any> {
     return this.http.post<any>(environment.contactFormAPI, data, this.httpOptions);
   }
 }

@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 
 // Environment Variables, Services
 import { ContactFormStateService } from './services/contact-form-state.service';
+import { environment } from 'src/environments/environment';
 import { SendDataService } from './services/send-data.service';
 
 // Custom Form Validator
@@ -71,12 +72,8 @@ export class ContactFormComponent implements OnDestroy, OnInit {
 
   onSubmit(): void {
     this.subscriptions.add(this.sendDataService.sendData(this.contactForm.value).subscribe(
-      response => {
-        console.log('--- response:', response)
-      },
-      error => {
-        console.log('--- error:', error)
-      }
+      response => !environment.production ? console.log('--- Contact Form API Response:', response) : null,
+      error => !environment.production ? console.log('--- Contact Form API Error:', error) : null
     ));
   }
 }
