@@ -20,7 +20,7 @@ function servicesValidator(formControl: FormControl) : ValidationErrors | null {
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnDestroy, OnInit {
-  servicesFormControlError: null | { noSelectedService: boolean } = null;
+  servicesFormControlError: { noSelectedService: boolean } | null = null;
   private subscriptions: Subscription = new Subscription();
 
   // Reactive Form
