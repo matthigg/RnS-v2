@@ -5,6 +5,12 @@
   }">
   </div>
   <mat-toolbar [ngClass]="{ 'expanded': pageOffset.pageYOffset === 0 }">
+    <span class="phone-number-text">
+      <svg class="svg-phone">
+        <use href="#svg-phone"></use>
+      </svg>
+      {{ phoneNumber }}
+    </span>
     <button 
       mat-button 
       type="button" 

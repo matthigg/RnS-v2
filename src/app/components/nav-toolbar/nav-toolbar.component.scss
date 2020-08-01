@@ -3,6 +3,7 @@ $mat-toolbar-transition: all 0.2s ease-in;
 $rns-logo-transition: all 0.2s ease-in;
 $nav-logo-dimensions: 8rem;
 $nav-logo-dimensions-expanded: 12rem;
+$svg-icon-dimensions: calc(1rem + 0.5vw);
 $url: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/rns-logo-01/340kb/';
 
 nav {
@@ -22,6 +23,9 @@ nav {
       & button {
         font-size: 1rem;
       }
+      & .phone-number-text {
+        font-size: 1.25rem;
+      }
     }
     & button {
       border-bottom: 2px solid transparent;
@@ -38,6 +42,19 @@ nav {
         transition: $button-transition;
       }
     }
+  }
+  & .phone-number-text {
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    margin-right: 4vw;
+    transition: $mat-toolbar-transition;
+  }
+  & .svg-phone {
+    fill: #fafafa;
+    height: $svg-icon-dimensions;
+    margin: 0 0.5rem;
+    width: $svg-icon-dimensions;
   }
   & .rns-logo {
     background-position: center;
