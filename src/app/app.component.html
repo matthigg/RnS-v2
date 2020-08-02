@@ -3,9 +3,31 @@
 <mat-sidenav-container (backdropClick)="close()">
 
   <!-- Sidenav -->
-  <mat-sidenav #sidenav>
-    <a routerLink="/home">Home</a><br>
-    <a routerLink="/about">About</a>
+  <mat-sidenav #sidenav tabindex="0">
+    <mat-list role="list" (click)="onClickNavLink()">
+      <mat-list-item role="listitem">
+        <button 
+          mat-button 
+          type="button" 
+          routerLinkActive="active-route" 
+          routerLink="/" 
+          [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button type="button" routerLinkActive="active-route" routerLink="/about">About</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button type="button" routerLinkActive="active-route" routerLink="/services">Services</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button type="button" routerLinkActive="active-route" routerLink="/our-work">Our Work</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button type="button" routerLinkActive="active-route" routerLink="/contact">Contact</button>
+      </mat-list-item>
+    </mat-list>
   </mat-sidenav>
 
   <!-- Main Content -->

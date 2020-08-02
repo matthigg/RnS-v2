@@ -50,17 +50,22 @@ nav {
         }
       }
     }
-    & .svg-hamburger {
-      height: 1rem;
-      stroke: #fafafa;
-      stroke-width: 6px;
-      padding: 0.5rem;
-      width: 1rem;
-      transition: $mat-toolbar-transition;
-      &:hover {
-        cursor: pointer;
-        stroke: #f3d333;
+    & .hamburger-icon {
+      background-color: #333;
+      border: none;
+      & .svg-hamburger {
+        border: none;
+        height: 1rem;
+        stroke: #fafafa;
+        stroke-width: 6px;
+        padding: 0.5rem;
+        width: 1rem;
         transition: $mat-toolbar-transition;
+        &:hover {
+          cursor: pointer;
+          stroke: #f3d333;
+          transition: $mat-toolbar-transition;
+        }
       }
     }
     @media (min-width: 768px) {

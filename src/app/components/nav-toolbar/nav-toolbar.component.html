@@ -35,13 +35,15 @@
     </div>
 
     <!-- Hamburger Icon -->
-    <div 
+    <button 
       class="hamburger-icon" 
+      tabindex="0"
+      type="button"
       (click)="onHamburgerClick()" 
       *ngIf="windowSize.width < 768px">
       <svg class="svg-hamburger">
         <use href="#svg-hamburger"></use>
       </svg>
-    </div>
+    </button>
   </mat-toolbar>
 </nav>

@@ -1,79 +1,105 @@
+$button-transition: all 0.2s ease-in;
 $url: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/house-01/375kb/';
 
 mat-sidenav-container {
   height: 100%;
-}
-
-.background-image {
-  background-color: #020305;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  width: 100%;
-  z-index: -1;
-  &.blurred-image {
-    background-image: url($url + '1x-house-01-576.jpg');
-    filter: blur(4px);
-    opacity: 1;
-    transition: 1s ease-in-out;
-    &.hide-image {
-      opacity: 0;
-      transition: 1s ease-in-out;
-    }
-  }
-  &.final-image {
-    opacity: 0;
-    transition: 1s ease-in-out;
-    &.show-image {
+  & .background-image {
+    background-color: #020305;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    &.blurred-image {
+      background-image: url($url + '1x-house-01-576.jpg');
+      filter: blur(4px);
       opacity: 1;
       transition: 1s ease-in-out;
+      &.hide-image {
+        opacity: 0;
+        transition: 1s ease-in-out;
+      }
+    }
+    &.final-image {
+      opacity: 0;
+      transition: 1s ease-in-out;
+      &.show-image {
+        opacity: 1;
+        transition: 1s ease-in-out;
+      }
+    }
+    @media (max-width: 599.98px) {
+      top: 56px;
+    }
+    @media (min-width: 600px) {
+      top: 64px;
     }
   }
-  @media (max-width: 599.98px) {
-    top: 56px;
+  & .background-image.final-image.show-image {
+    @media (min-width: 0px) {
+      background-image:                   url($url + '1x-house-01-576.jpg');
+      background-image: -webkit-image-set(url($url + '1x-house-01-576.webp') 1x); 
+      background-image:         image-set(url($url + '1x-house-01-576.jpg') 1x);
+    }
+    @media (min-width: 768px) {
+      background-image:                   url($url + '1x-house-01-768.jpg');
+      background-image: -webkit-image-set(url($url + '1x-house-01-768.webp') 1x); 
+      background-image:         image-set(url($url + '1x-house-01-768.jpg') 1x);
+    }
+    @media (min-width: 992px) {
+      background-image:                   url($url + '1x-house-01-992.jpg');
+      background-image: -webkit-image-set(url($url + '1x-house-01-992.webp') 1x); 
+      background-image:         image-set(url($url + '1x-house-01-992.jpg') 1x);
+    }
+    @media (min-width: 1200px) {
+      background-image:                   url($url + '1x-house-01-1200.jpg');
+      background-image: -webkit-image-set(url($url + '1x-house-01-1200.webp') 1x); 
+      background-image:         image-set(url($url + '1x-house-01-1200.jpg') 1x);
+    }
+    @media (min-width: 1440px) {
+      background-image:                   url($url + '1x-house-01-1440.jpg');
+      background-image: -webkit-image-set(url($url + '1x-house-01-1440.webp') 1x); 
+      background-image:         image-set(url($url + '1x-house-01-1440.jpg') 1x);
+    }
   }
-  @media (min-width: 600px) {
-    top: 64px;
+  & .mat-sidenav {
+    background: #333;
+    width: 75vw;
+    & .mat-list-item {
+      margin-bottom: 2rem;
+      & button {
+        border-bottom: 2px solid transparent;
+        border-radius: 4px 4px 0 0;
+        color: white;
+        font-size: 2rem;
+        padding: 1rem 0;
+        width: 100%;
+        transition: $button-transition;
+        &.active-route {
+          border-bottom: 2px solid #f3d333;
+          color: #f3d333;
+        }
+        &:hover {
+          border-bottom: 2px solid #f3d333;
+          color: #f3d333;
+          transition: $button-transition;
+        }
+      }
+      &:first-child {
+        margin-top: 2rem;
+      }
+    }
   }
-}
-
-.background-image.final-image.show-image {
-  @media (min-width: 0px) {
-    background-image:                   url($url + '1x-house-01-576.jpg');
-    background-image: -webkit-image-set(url($url + '1x-house-01-576.webp') 1x); 
-    background-image:         image-set(url($url + '1x-house-01-576.jpg') 1x);
-  }
-  @media (min-width: 768px) {
-    background-image:                   url($url + '1x-house-01-768.jpg');
-    background-image: -webkit-image-set(url($url + '1x-house-01-768.webp') 1x); 
-    background-image:         image-set(url($url + '1x-house-01-768.jpg') 1x);
-  }
-  @media (min-width: 992px) {
-    background-image:                   url($url + '1x-house-01-992.jpg');
-    background-image: -webkit-image-set(url($url + '1x-house-01-992.webp') 1x); 
-    background-image:         image-set(url($url + '1x-house-01-992.jpg') 1x);
-  }
-  @media (min-width: 1200px) {
-    background-image:                   url($url + '1x-house-01-1200.jpg');
-    background-image: -webkit-image-set(url($url + '1x-house-01-1200.webp') 1x); 
-    background-image:         image-set(url($url + '1x-house-01-1200.jpg') 1x);
-  }
-  @media (min-width: 1440px) {
-    background-image:                   url($url + '1x-house-01-1440.jpg');
-    background-image: -webkit-image-set(url($url + '1x-house-01-1440.webp') 1x); 
-    background-image:         image-set(url($url + '1x-house-01-1440.jpg') 1x);
-  }
-}
-
-.nav-toolbar-spacer {
-  background-color: #fff;
-  width: 100%;
-  @media (max-width: 599.98px) {
-    height: 56px;
-  }
-  @media (min-width: 600px) {
-    height: 64px;
+  & .nav-toolbar-spacer {
+    background-color: #fff;
+    width: 100%;
+    @media (max-width: 599.98px) {
+      height: 56px;
+    }
+    @media (min-width: 600px) {
+      height: 64px;
+    }
   }
 }

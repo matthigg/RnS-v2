@@ -41,6 +41,10 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     this.sidenav.close();
   }
 
+  onClickNavLink(): void {
+    this.sidenav.close();
+  }
+
   open(): void {
     this.sidenav.open();
   }
