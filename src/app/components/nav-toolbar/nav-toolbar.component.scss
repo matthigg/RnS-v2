@@ -2,6 +2,7 @@ $button-transition: all 0.2s ease-in;
 $mat-toolbar-transition: all 0.2s ease-in;
 $rns-logo-transition: all 0.2s ease-in;
 $nav-logo-dimensions: 8rem;
+$nav-logo-dimensions-mobile: 5rem;
 $nav-logo-dimensions-expanded: 12rem;
 $svg-icon-dimensions: calc(1rem + 0.5vw);
 $url: 'https://rns-static-and-media-files.s3.amazonaws.com/static/img/rns-logo-01/340kb/';
@@ -82,38 +83,37 @@ nav {
   & .rns-logo {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto $nav-logo-dimensions;
-    left: 0.5rem;
-    height: $nav-logo-dimensions;
     position: absolute;
-    top: 1rem;
     transition: $rns-logo-transition;
-    width: $nav-logo-dimensions;
-    &.expanded {
-      background-size: auto $nav-logo-dimensions-expanded;
-      height: $nav-logo-dimensions-expanded;
-      transition: $rns-logo-transition;
-      width: $nav-logo-dimensions-expanded;
+    @media (max-width: 767.98px) {
+      background-size: auto $nav-logo-dimensions-mobile;
+      height: $nav-logo-dimensions-mobile;
+      top: 0.5rem;
+      width: $nav-logo-dimensions-mobile;
     }
-  }
-  @media (min-width: 0px) {
-    .rns-logo {
+    @media (min-width: 768px) {
+      background-size: auto $nav-logo-dimensions;
+      height: $nav-logo-dimensions;
+      top: 1rem;
+      width: $nav-logo-dimensions;
+      &.expanded {
+        background-size: auto $nav-logo-dimensions-expanded;
+        height: $nav-logo-dimensions-expanded;
+        transition: $rns-logo-transition;
+        width: $nav-logo-dimensions-expanded;
+      }
+    }
+    @media (min-width: 0px) {
       background-image:                   url($url + '1x-rns-logo-01-160.png');
       background-image: -webkit-image-set(url($url + '1x-rns-logo-01-160.webp') 1x, url($url + '2x-rns-logo-01-160.webp') 2x);  
       background-image:         image-set(url($url + '1x-rns-logo-01-160.png') 1x, url($url + '2x-rns-logo-01-160.png') 2x);
     }
-  }
-
-  @media (min-width: 320px) {
-    .rns-logo {
+    @media (min-width: 320px) {
       background-image:                   url($url + '1x-rns-logo-01-160.png');
       background-image: -webkit-image-set(url($url + '1x-rns-logo-01-160.webp') 1x, url($url + '2x-rns-logo-01-160.webp') 2x);  
       background-image:         image-set(url($url + '1x-rns-logo-01-160.png') 1x, url($url + '2x-rns-logo-01-160.png') 2x);
     }
-  }
-
-  @media (min-width: 576px) {
-    .rns-logo {
+    @media (min-width: 576px) {
       background-image:                   url($url + '1x-rns-logo-01-160.png');
       background-image: -webkit-image-set(url($url + '1x-rns-logo-01-160.webp') 1x, url($url + '2x-rns-logo-01-160.webp') 2x);  
       background-image:         image-set(url($url + '1x-rns-logo-01-160.png') 1x, url($url + '2x-rns-logo-01-160.png') 2x);

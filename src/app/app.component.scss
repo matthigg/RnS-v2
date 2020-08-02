@@ -66,6 +66,8 @@ mat-sidenav-container {
   }
   & .mat-sidenav {
     background: #333;
+    height: 100vh;
+    position: fixed;
     width: 75vw;
     & .mat-list-item {
       margin-bottom: 2rem;
