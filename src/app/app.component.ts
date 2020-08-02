@@ -40,4 +40,8 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
   close(): void {
     this.sidenav.close();
   }
+
+  open(): void {
+    this.sidenav.open();
+  }
 }

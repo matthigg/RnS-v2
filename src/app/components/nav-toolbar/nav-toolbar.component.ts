@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 
 // RxJS
 import { Subscription } from 'rxjs';
@@ -20,6 +20,7 @@ export class NavToolbarComponent implements OnDestroy, OnInit {
   pageOffset: PageOffset | null = null;
   windowSize: WindowSize | null = null;
   private subscriptions: Subscription = new Subscription();
+  @Output() openDrawer: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private businessInformationService: BusinessInformationService,
@@ -41,6 +42,6 @@ export class NavToolbarComponent implements OnDestroy, OnInit {
   }
 
   onHamburgerClick(): void {
-    console.log('--- click')
+    this.openDrawer.emit();
   }
 }

@@ -20,7 +20,7 @@
       'final-image': true,
       'show-image': fadeInBackgroundImage
     }"></div>
-    <app-nav-toolbar></app-nav-toolbar>
+    <app-nav-toolbar (openDrawer)="open($event)"></app-nav-toolbar>
     <div class="nav-toolbar-spacer"></div>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
