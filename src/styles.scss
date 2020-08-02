@@ -11,10 +11,15 @@ section {
 
 h1 {
   color: #333;
-  margin: 3.5rem 0;
   text-align: center;
   & span {
     color: #f3d333;
     font-family: 'Stencil';
+  }
+  @media (max-width: 767.98px) {
+    margin: 3.5rem 0 1rem 0;
+  }
+  @media (min-width: 768px) {
+    margin: 3.5rem 0;
   }
 }
