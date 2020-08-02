@@ -5,23 +5,25 @@
   }">
   </div>
   <mat-toolbar [ngClass]="{ 'expanded': pageOffset.pageYOffset === 0 }">
-    <span class="phone-number-text">
-      <svg class="svg-phone">
-        <use href="#svg-phone"></use>
-      </svg>
-      {{ phoneNumber }}
-    </span>
-    <button 
-      mat-button 
-      type="button" 
-      routerLinkActive="active-route" 
-      routerLink="/" 
-      [routerLinkActiveOptions]="{ exact: true }">
-      Home
-    </button>
-    <button mat-button type="button" routerLinkActive="active-route" routerLink="/about">About</button>
-    <button mat-button type="button" routerLinkActive="active-route" routerLink="/services">Services</button>
-    <button mat-button type="button" routerLinkActive="active-route" routerLink="/our-work">Our Work</button>
-    <button mat-button type="button" routerLinkActive="active-route" routerLink="/contact">Contact</button>
+    <div class="nav-buttons" *ngIf="windowSize.width > 768px">
+      <span class="phone-number-text" *ngIf="windowSize.width > 870px">
+        <svg class="svg-phone">
+          <use href="#svg-phone"></use>
+        </svg>
+        {{ phoneNumber }}
+      </span>
+      <button 
+        mat-button 
+        type="button" 
+        routerLinkActive="active-route" 
+        routerLink="/" 
+        [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </button>
+      <button mat-button type="button" routerLinkActive="active-route" routerLink="/about">About</button>
+      <button mat-button type="button" routerLinkActive="active-route" routerLink="/services">Services</button>
+      <button mat-button type="button" routerLinkActive="active-route" routerLink="/our-work">Our Work</button>
+      <button mat-button type="button" routerLinkActive="active-route" routerLink="/contact">Contact</button>
+    </div>
   </mat-toolbar>
 </nav>
