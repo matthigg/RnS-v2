@@ -1,8 +1,14 @@
-<mat-toolbar>
-  RESTORE & SHINE
-  <svg class="svg-icon-cancel" (click)="onClose()">
-    <use href="#svg-cancel" />
-  </svg>
-</mat-toolbar>
-<img src="{{ rootImageURL }}{{ data.before }}">
-<img src="{{ rootImageURL }}{{ data.after }}">
+<section>
+  <mat-toolbar>
+    RESTORE & SHINE
+    <svg class="svg-icon-cancel" (click)="onClose()">
+      <use href="#svg-cancel" />
+    </svg>
+  </mat-toolbar>
+  <div class="img-wrapper before">
+    <img src="{{ rootImageURL }}{{ data.before }}">
+  </div>
+  <div class="img-wrapper after">
+    <img src="{{ rootImageURL }}{{ data.after }}">
+  </div>
+</section>
