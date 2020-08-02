@@ -13,16 +13,10 @@ nav {
   & mat-toolbar {
     background-color: #333;
     color: white;
+    display: flex;
+    justify-content: flex-end;
     padding-right: 2rem;
     transition: $mat-toolbar-transition;
-    &.expanded {
-      height: calc(64px + 1rem);
-      transition: $mat-toolbar-transition;
-      & .nav-buttons {
-        & button { font-size: 1rem; }
-        & .phone-number-text { font-size: 1.25rem; }
-      }
-    }
     & .nav-buttons {
       display: flex;
       justify-content: flex-end;
@@ -53,6 +47,29 @@ nav {
           height: $svg-icon-dimensions;
           margin: 0 0.5rem;
           width: $svg-icon-dimensions;
+        }
+      }
+    }
+    & .svg-hamburger {
+      height: 1rem;
+      stroke: #fafafa;
+      stroke-width: 6px;
+      padding: 0.5rem;
+      width: 1rem;
+      transition: $mat-toolbar-transition;
+      &:hover {
+        cursor: pointer;
+        stroke: #f3d333;
+        transition: $mat-toolbar-transition;
+      }
+    }
+    @media (min-width: 768px) {
+      &.expanded {
+        height: calc(64px + 1rem);
+        transition: $mat-toolbar-transition;
+        & .nav-buttons {
+          & button { font-size: 1rem; }
+          & .phone-number-text { font-size: 1.25rem; }
         }
       }
     }

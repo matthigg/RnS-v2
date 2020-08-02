@@ -34,10 +34,13 @@ export class NavToolbarComponent implements OnDestroy, OnInit {
     this.subscriptions.add(this.windowSizeService.windowSize.subscribe(
       response => this.windowSize = response
     ));
-    console.log('--- windowSize:', this.windowSize);
   }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+  }
+
+  onHamburgerClick(): void {
+    console.log('--- click')
   }
 }

@@ -1,17 +1,25 @@
 <nav>
+
+  <!-- Logo -->
   <div [ngClass]="{
     'expanded': pageOffset.pageYOffset === 0,
     'rns-logo': true
   }">
   </div>
+
+  <!-- Nav Toolbar -->
   <mat-toolbar [ngClass]="{ 'expanded': pageOffset.pageYOffset === 0 }">
-    <div class="nav-buttons" *ngIf="windowSize.width > 768px">
-      <span class="phone-number-text" *ngIf="windowSize.width > 870px">
+    <div class="nav-buttons" *ngIf="windowSize.width >= 768px">
+
+      <!-- Phone Number Text -->
+      <span class="phone-number-text" *ngIf="windowSize.width >= 870px">
         <svg class="svg-phone">
           <use href="#svg-phone"></use>
         </svg>
         {{ phoneNumber }}
       </span>
+
+      <!-- Nav Buttons -->
       <button 
         mat-button 
         type="button" 
@@ -24,6 +32,16 @@
       <button mat-button type="button" routerLinkActive="active-route" routerLink="/services">Services</button>
       <button mat-button type="button" routerLinkActive="active-route" routerLink="/our-work">Our Work</button>
       <button mat-button type="button" routerLinkActive="active-route" routerLink="/contact">Contact</button>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div 
+      class="hamburger-icon" 
+      (click)="onHamburgerClick()" 
+      *ngIf="windowSize.width < 768px">
+      <svg class="svg-hamburger">
+        <use href="#svg-hamburger"></use>
+      </svg>
     </div>
   </mat-toolbar>
 </nav>
