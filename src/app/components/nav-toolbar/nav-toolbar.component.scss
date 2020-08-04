@@ -78,6 +78,7 @@ nav {
     }
     @media (min-width: 768px) {
       &.expanded {
+        background-color: rgba(0, 0, 0, 0.87);
         height: calc(64px + 1rem);
         transition: $mat-toolbar-transition;
         & .nav-buttons {
