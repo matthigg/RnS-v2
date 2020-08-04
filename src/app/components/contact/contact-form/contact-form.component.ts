@@ -42,11 +42,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   get typeOfExterior() { return this.contactForm.get('typeOfExterior'); }
   get sqFtInput() { return this.contactForm.get('sqFtInput'); }
   get sqFtSelect() { return this.contactForm.get('sqFtSelect'); }
-  get svcFenceCleaning() { return this.contactForm.get('svcFenceCleaning'); }
-  get svcSurfaceCleaning() { return this.contactForm.get('svcSurfaceCleaning'); }
-  get svcSoftWash() { return this.contactForm.get('svcSoftWash'); }
-  get svcStainRemoval() { return this.contactForm.get('svcStainRemoval'); }
-  get svcDeckCleaning() { return this.contactForm.get('svcDeckCleaning'); }
+  get services() { return this.contactForm.get('services'); }
   get message() { return this.contactForm.get('message'); }
 
   constructor(

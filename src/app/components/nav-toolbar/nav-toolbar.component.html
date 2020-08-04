@@ -28,10 +28,34 @@
         [routerLinkActiveOptions]="{ exact: true }">
         Home
       </button>
-      <button mat-button type="button" routerLinkActive="active-route" routerLink="/about">About</button>
-      <button mat-button type="button" routerLinkActive="active-route" routerLink="/services">Services</button>
-      <button mat-button type="button" routerLinkActive="active-route" routerLink="/our-work">Our Work</button>
-      <button mat-button type="button" routerLinkActive="active-route" routerLink="/contact">Contact</button>
+      <button 
+        mat-button 
+        routerLinkActive="active-route" 
+        routerLink="/about"
+        type="button">
+        About
+      </button>
+      <button 
+        mat-button 
+        routerLinkActive="active-route"
+        routerLink="/services"
+        type="button">
+        Services
+      </button>
+      <button 
+        mat-button    
+        routerLinkActive="active-route" 
+        routerLink="/our-work"
+        type="button">
+        Our Work
+      </button>
+      <button 
+        mat-button 
+        routerLinkActive="active-route" 
+        routerLink="/contact"
+        type="button">
+        Contact
+      </button>
     </div>
 
     <!-- Hamburger Icon -->
@@ -46,4 +70,14 @@
       </svg>
     </button>
   </mat-toolbar>
+
+  <!-- Free Estimate Button -->
+  <!-- <button 
+    class="button-free-estimate" 
+    mat-raised-button 
+    routerLink="/contact"
+    type="button">
+    Get A Free Estimate!
+  </button> -->
+
 </nav>

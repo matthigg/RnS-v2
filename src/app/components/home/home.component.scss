@@ -11,8 +11,10 @@ mat-toolbar {
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
   display: flex;
-  font-style: italic;
-  justify-content: center;
+  justify-content: space-around;
+  & .italic {
+    font-style: italic;
+  }
   @media (max-width: 359.98px) {
     font-size: 0.75rem;
   }
@@ -24,12 +26,34 @@ mat-toolbar {
   }
 }
 
-.section-services {
+.section-contact-form {
   background-color: #fafafa;
   padding: 1rem;
 }
 
-.section-contact-form {
+.section-landing-page {
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 599.98px) {
+    min-height: calc(100vh - (2 * 56px));
+  }
+  @media (min-width: 600px) {
+    min-height: calc(100vh - (2 * 64px));
+  }
+  & app-contact-form-stepper {
+    margin-right: 2rem;
+    position: relative;
+    width: 35vw;
+    @media (max-width: 599.98px) {
+      top: calc(56px);
+    }
+    @media (min-width: 600px) {
+      top: calc(64px);
+    }
+  }
+}
+
+.section-services {
   background-color: #fafafa;
   padding: 1rem;
 }

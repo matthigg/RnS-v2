@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Components
@@ -43,6 +44,7 @@ import { SurfaceCleaningComponent } from './components/our-services/service-comp
 
 // Pipes
 import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
+import { ContactFormStepperComponent } from './components/home/contact-form-stepper/contact-form-stepper.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,7 @@ import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
     SoftWashComponent,
     SvgSpriteSheetComponent,
     SurfaceCleaningComponent,
+    ContactFormStepperComponent,
   ],
   entryComponents: [ PictureDialogComponent ],
   imports: [
@@ -84,6 +87,7 @@ import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
     MatListModule,
     MatSelectModule,
     MatSidenavModule,
+    MatStepperModule,
     MatToolbarModule,
     ReactiveFormsModule,
   ],
