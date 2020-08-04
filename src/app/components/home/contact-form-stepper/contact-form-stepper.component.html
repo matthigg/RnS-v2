@@ -1,4 +1,4 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<mat-horizontal-stepper [linear]="isLinear" #stepper class="dark-theme">
 
   <!-- Step 1 -->
   <mat-step [stepControl]="formGroupStep1">
@@ -77,8 +77,6 @@
 
       <!-- Services -->
       <div class="services-wrapper">
-        <!-- <h3>Services</h3> -->
-        <!-- <h4>Select at least one service *</h4> -->
         <ng-container>
           <mat-selection-list formControlName="services" (selectionChange)="onClickService()">
             <mat-list-option value="Fence Cleaning">Fence Cleaning</mat-list-option>

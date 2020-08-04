@@ -3,9 +3,15 @@ mat-form-field {
 }
 
 mat-horizontal-stepper {
-  background-color: rgba(0, 0, 0, 0.87);
+  // background-color: rgba(0, 0, 0, 0.87);
   border-radius: 0.35rem;
-  color: #fafafa;
+  // color: #fafafa;
   font-size: 0.85rem;
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
+
+// ::ng-deep {
+//   .mat-step-header .mat-step-label.mat-step-label-active {
+//     color: #fafafa;
+//   }
+// }
