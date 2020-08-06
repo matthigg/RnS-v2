@@ -1,5 +1,6 @@
 import { Component, OnInit, enableProdMode } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 
 // RxJS
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -38,6 +39,7 @@ export class ContactFormStepperComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private sendDataService: SendDataService,
   ) { }
 
@@ -69,7 +71,10 @@ export class ContactFormStepperComponent implements OnInit {
     Object.assign(requestPayload, this.formGroupStep1.value);
     Object.assign(requestPayload, this.formGroupStep2.value);
     this._subscriptions.add(this.sendDataService.sendData(requestPayload).subscribe(
-      response => !environment.production ? console.log('--- Contact Form API Response:', response) : null,
+      response => {
+        !environment.production ? console.log('--- Contact Form API Response:', response) : null;
+        this.router.navigate(['thank-you']);
+      },
       error => !environment.production ? console.log('--- Contact Form API Error:', error) : null
     ));
   }

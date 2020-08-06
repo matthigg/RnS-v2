@@ -13,19 +13,21 @@ import { DeckCleaningAndRestorationComponent } from './components/our-services/s
 import { HomeComponent } from './components/home/home.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { ServicesComponent } from './components/our-services/services.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 const routes: Routes = [
-  { path: 'about',    component: AboutComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'services/fence-cleaning', component: FenceCleaningComponent },
-  { path: 'services/surface-cleaning', component: SurfaceCleaningComponent },
-  { path: 'services/soft-wash', component: SoftWashComponent },
-  { path: 'services/outdoor-stain-removal', component: OutdoorStainRemovalComponent },
+  { path: 'about',      component: AboutComponent },
+  { path: 'services',   component: ServicesComponent },
+  { path: 'services/fence-cleaning',                component: FenceCleaningComponent },
+  { path: 'services/surface-cleaning',              component: SurfaceCleaningComponent },
+  { path: 'services/soft-wash',                     component: SoftWashComponent },
+  { path: 'services/outdoor-stain-removal',         component: OutdoorStainRemovalComponent },
   { path: 'services/deck-cleaning-and-restoration', component: DeckCleaningAndRestorationComponent },
-  { path: 'our-work', component: OurWorkComponent },
-  { path: 'contact',  component: ContactComponent },
-  { path: '',         component: HomeComponent },
-  { path: '**',       component: HomeComponent },
+  { path: 'our-work',   component: OurWorkComponent },
+  { path: 'contact',    component: ContactComponent },
+  { path: 'thank-you',  component: ThankYouComponent },
+  { path: '',           component: HomeComponent },
+  { path: '**',         component: HomeComponent },
 ];
 
 @NgModule({

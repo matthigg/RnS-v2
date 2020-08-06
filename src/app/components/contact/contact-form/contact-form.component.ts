@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 // RxJS
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -46,6 +47,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private sendDataService: SendDataService,
   ) { }
 
@@ -64,7 +66,10 @@ export class ContactFormComponent implements OnDestroy, OnInit {
 
   onSubmit(): void {
     this._subscriptions.add(this.sendDataService.sendData(this.contactForm.value).subscribe(
-      response => !environment.production ? console.log('--- Contact Form API Response:', response) : null,
+      response => {
+        !environment.production ? console.log('--- Contact Form API Response:', response) : null;
+        this.router.navigate(['thank-you']);
+      },
       error => !environment.production ? console.log('--- Contact Form API Error:', error) : null
     ));
   }
