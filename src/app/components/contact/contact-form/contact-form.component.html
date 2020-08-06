@@ -94,7 +94,7 @@
             <mat-error 
               [ngClass]="{ 
                 'services-error': true,
-                'show-error': servicesFormControlError?.noSelectedService ? true : false
+                'show-error': servicesFormControlError.value?.noSelectedService ? true : false
               }">
               Please select at least one service
             </mat-error>

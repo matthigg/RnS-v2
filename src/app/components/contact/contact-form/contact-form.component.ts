@@ -2,10 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, ValidationErrors, Validators } from '@angular/forms';
 
 // RxJS
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 // Environment Variables, Services
-import { ContactFormStateService } from './services/contact-form-state.service';
 import { environment } from 'src/environments/environment';
 import { SendDataService } from './services/send-data.service';
 
@@ -20,7 +19,7 @@ export default function servicesValidator(formControl: FormControl) : Validation
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnDestroy, OnInit {
-  servicesFormControlError: { noSelectedService: boolean } | null = null;
+  servicesFormControlError: BehaviorSubject<ValidationErrors | null> = new BehaviorSubject(null);
   private subscriptions: Subscription = new Subscription();
 
   // Reactive Form
@@ -46,7 +45,6 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   get message()         { return this.contactForm.get('message'); }
 
   constructor(
-    private contactFormStateService: ContactFormStateService,
     private fb: FormBuilder,
     private sendDataService: SendDataService,
   ) { }
@@ -56,13 +54,11 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this.subscriptions.add(this.contactFormStateService.servicesFormControlError
-      .subscribe(response => this.servicesFormControlError = response));
   }
 
   onClickService(): void {
     setTimeout(_ => {
-      this.contactFormStateService.servicesFormControlError.next(this.contactForm.controls.services.errors);
+      this.servicesFormControlError.next(this.contactForm.controls.services.errors);
     });
   }
 
