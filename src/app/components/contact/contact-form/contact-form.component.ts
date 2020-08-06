@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 import { SendDataService } from './services/send-data.service';
 
 // Custom Form Validator
-function servicesValidator(formControl: FormControl) : ValidationErrors | null {
+export default function servicesValidator(formControl: FormControl) : ValidationErrors | null {
   return formControl.value.length === 0 ? { 'noSelectedService': true } : null;
 }
 
@@ -25,25 +25,25 @@ export class ContactFormComponent implements OnDestroy, OnInit {
 
   // Reactive Form
   contactForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    phone: '',
-    numberOfStories: ['', Validators.required],
-    typeOfExterior: ['', Validators.required],
-    sqFtInput: '',
-    sqFtSelect: '',
-    services: ['', servicesValidator],
-    message: '',
+    name:             ['', Validators.required],
+    email:            ['', [Validators.required, Validators.email]],
+    phone:            '',
+    numberOfStories:  ['', Validators.required],
+    typeOfExterior:   ['', Validators.required],
+    sqFtInput:        '',
+    sqFtSelect:       '',
+    services:         ['', servicesValidator],
+    message:          '',
   });
-  get name() { return this.contactForm.get('name'); }
-  get email() { return this.contactForm.get('email'); }
-  get phone() { return this.contactForm.get('phone'); }
+  get name()            { return this.contactForm.get('name'); }
+  get email()           { return this.contactForm.get('email'); }
+  get phone()           { return this.contactForm.get('phone'); }
   get numberOfStories() { return this.contactForm.get('numberOfStories'); }
-  get typeOfExterior() { return this.contactForm.get('typeOfExterior'); }
-  get sqFtInput() { return this.contactForm.get('sqFtInput'); }
-  get sqFtSelect() { return this.contactForm.get('sqFtSelect'); }
-  get services() { return this.contactForm.get('services'); }
-  get message() { return this.contactForm.get('message'); }
+  get typeOfExterior()  { return this.contactForm.get('typeOfExterior'); }
+  get sqFtInput()       { return this.contactForm.get('sqFtInput'); }
+  get sqFtSelect()      { return this.contactForm.get('sqFtSelect'); }
+  get services()        { return this.contactForm.get('services'); }
+  get message()         { return this.contactForm.get('message'); }
 
   constructor(
     private contactFormStateService: ContactFormStateService,

@@ -9,7 +9,7 @@ mat-sidenav-container {
     // background-position
     background-size: cover;
     height: 100vh;
-    left: 0;
+    // left: 0;
     position: fixed;
     width: 100%;
     z-index: -1;
@@ -31,12 +31,12 @@ mat-sidenav-container {
         transition: 1s ease-in-out;
       }
     }
-    // @media (max-width: 599.98px) {
-    //   top: 56px;
-    // }
-    // @media (min-width: 600px) {
-    //   top: 64px;
-    // }
+    @media (max-width: 599.98px) {
+      top: 0rem;
+    }
+    @media (min-width: 600px) {
+      top: -2rem;
+    }
   }
   & .background-image.final-image.show-image {
     @media (min-width: 0px) {

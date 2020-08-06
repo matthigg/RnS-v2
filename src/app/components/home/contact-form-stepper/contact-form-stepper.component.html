@@ -72,7 +72,7 @@
 
   <!-- Step 2 -->
   <mat-step [stepControl]="formGroupStep2">
-    <form [formGroup]="formGroupStep2">
+    <form [formGroup]="formGroupStep2" (submit)="onSubmit()">
       <ng-template matStepLabel>Services</ng-template>
 
       <!-- Services -->
