@@ -71,8 +71,7 @@ export class ContactFormStepperComponent implements OnInit {
     let requestPayload: ContactFormData | {} = {};
     Object.assign(requestPayload, this.formGroupStep1.value);
     Object.assign(requestPayload, this.formGroupStep2.value);
-    // this._subscriptions.add(this.sendDataService.sendData(requestPayload).subscribe(
-    this._subscriptions.add(this.sendDataService.sendData(requestPayload).subscribe(
+    this._subscriptions.add(this.sendDataService.sendData((requestPayload as ContactFormData)).subscribe(
       response => {
         !environment.production ? console.log('--- Contact Form API Response:', response) : null;
         this.router.navigate(['thank-you']);
