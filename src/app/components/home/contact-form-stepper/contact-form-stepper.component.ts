@@ -29,9 +29,9 @@ export class ContactFormStepperComponent implements OnInit {
   get name()            { return this.formGroupStep1.get('name'); }
   get email()           { return this.formGroupStep1.get('email'); }
   get phone()           { return this.formGroupStep1.get('phone'); }
+  get address()         { return this.formGroupStep1.get('address'); }
   get numberOfStories() { return this.formGroupStep1.get('numberOfStories'); }
   get typeOfExterior()  { return this.formGroupStep1.get('typeOfExterior'); }
-  get sqft()            { return this.formGroupStep1.get('sqft'); }
 
   // Reactive Form, Step 2
   formGroupStep2: FormGroup;
@@ -50,9 +50,9 @@ export class ContactFormStepperComponent implements OnInit {
       name:             ['', Validators.required],
       email:            ['', [Validators.required, Validators.email]],
       phone:            '',
+      address:          '',
       numberOfStories:  ['', Validators.required],
       typeOfExterior:   ['', Validators.required],
-      sqft:             '',
     });
 
     this.formGroupStep2 = this.fb.group({

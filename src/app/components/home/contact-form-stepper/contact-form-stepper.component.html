@@ -6,14 +6,14 @@
       <ng-template matStepLabel>Information</ng-template>
 
       <!-- Name -->
-      <mat-form-field class="form-field-name">
+      <mat-form-field>
         <mat-label>Name *</mat-label>
         <input formControlName="name" matInput type="text">
         <mat-error *ngIf="name.errors?.required">Please enter your name</mat-error>
       </mat-form-field>
 
       <!-- Email -->
-      <mat-form-field class="form-field-email">
+      <mat-form-field>
         <mat-label>Email *</mat-label>
         <input formControlName="email" matInput type="text">
         <mat-error *ngIf="email.errors?.required">Please enter an email address</mat-error>
@@ -21,14 +21,21 @@
       </mat-form-field>
 
       <!-- Phone -->
-      <mat-form-field class="form-field-phone">
+      <mat-form-field>
         <mat-label>Phone</mat-label>
         <input formControlName="phone" matInput type="tel">
         <mat-error *ngIf="phone.errors?.required">Please enter your phone number</mat-error>
       </mat-form-field>
 
+      <!-- Address -->
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input formControlName="address" matInput type="text">
+        <mat-error *ngIf="address.errors?.required">Please enter the property address</mat-error>
+      </mat-form-field>
+
       <!-- Number of Stories -->
-      <mat-form-field appearance="fill" class="form-field-number-of-stories">
+      <mat-form-field appearance="fill">
         <mat-label>Number of stories *</mat-label>
         <mat-select formControlName="numberOfStories" >
           <mat-option value="1">1</mat-option>
@@ -40,7 +47,7 @@
       </mat-form-field>
 
       <!-- Type of Exterior -->
-      <mat-form-field appearance="fill" class="form-field-type-of-exterior">
+      <mat-form-field appearance="fill">
         <mat-label>Type of exterior *</mat-label>
         <mat-select formControlName="typeOfExterior">
           <mat-option value="Vinyl">Vinyl</mat-option>
@@ -50,21 +57,6 @@
           <mat-option value="Other">Other</mat-option>
         </mat-select>
         <mat-error *ngIf="typeOfExterior.errors?.required">Please enter the type of exterior</mat-error>
-      </mat-form-field>
-
-      <!-- Approx. Square Footage -->
-      <mat-form-field appearance="fill" class="form-field-sq-ft-select">
-        <mat-label>Approx. square footage</mat-label>
-        <mat-select formControlName="sqft">
-          <mat-option value="< 1000">< 1000</mat-option>
-          <mat-option value="1000 - 1500">1000 - 1500</mat-option>
-          <mat-option value="1500 - 2000">1500 - 2000</mat-option>
-          <mat-option value="2000 - 2500">2000 - 2500</mat-option>
-          <mat-option value="2500 - 3000">2500 - 3000</mat-option>
-          <mat-option value="3000 - 3000">3000 - 3500</mat-option>
-          <mat-option value="3000+">3500+</mat-option>
-        </mat-select>
-        <mat-error *ngIf="sqft.errors?.required">Please enter the type of exterior</mat-error>
       </mat-form-field>
 
       <!-- Buttons -->
@@ -102,7 +94,7 @@
       </div>
 
       <!-- Message -->
-      <mat-form-field appearance="outline" class="textarea-form-field">
+      <mat-form-field appearance="outline">
         <mat-label>Send us a message</mat-label>
         <textarea formControlName="message" matInput></textarea>
         <mat-error *ngIf="message.errors?.required">Please enter a message</mat-error>
