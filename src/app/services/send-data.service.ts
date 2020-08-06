@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 // Environment Variables, Models
-import { ContactFormData } from '../../../../shared/models/contact-form-data';
+import { ContactFormData } from 'src/app/shared/models/contact-form-data';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
