@@ -45,6 +45,7 @@ import { SurfaceCleaningComponent } from './components/our-services/service-comp
 // Pipes
 import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
 import { ContactFormStepperComponent } from './components/home/contact-form-stepper/contact-form-stepper.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ContactFormStepperComponent } from './components/home/contact-form-step
     SvgSpriteSheetComponent,
     SurfaceCleaningComponent,
     ContactFormStepperComponent,
+    ThankYouComponent,
   ],
   entryComponents: [ PictureDialogComponent ],
   imports: [
