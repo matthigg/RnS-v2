@@ -1,0 +1,30 @@
+section {
+  background-color: #fafafa;
+  min-height: 100vh;
+  @media (max-width: 767.98px) {
+    padding: calc(1rem + 1vw);
+  }
+  @media (min-width: 768px) {
+    padding: calc(1rem + 1vw) calc(1rem + 13vw);
+  }
+  & .contact-info-wrapper {
+    grid-auto-rows: minmax(15vh auto);
+    display: grid;
+    grid-template-areas: 
+      'ctext cinfo';
+    grid-template-columns: 1fr 1fr;
+    & app-contact-info {
+      grid-area: cinfo;
+    }
+    & p {
+      font-size: 1.25rem;
+      grid-area: ctext;
+      text-align: center;
+      & span {
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 500;
+      }
+    }
+  }
+}
