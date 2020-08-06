@@ -6,7 +6,7 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 
 // Environment Variables, Services
 import { environment } from 'src/environments/environment';
-import { SendDataService } from './services/send-data.service';
+import { SendDataService } from 'src/app/services/send-data.service';
 
 // Custom Form Validator
 export default function servicesValidator(formControl: FormControl) : ValidationErrors | null {
