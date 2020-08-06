@@ -8,11 +8,12 @@ $mat-card-transition: 0.25s ease-in-out;
 }
 
 mat-toolbar {
-  background-color: rgba(0, 0, 0, 0.93);
+  background-color: rgba(0, 0, 0, 0.87);
   color: white;
   display: flex;
   justify-content: space-around;
   & .italic {
+    font-size: 1rem;
     font-style: italic;
   }
   @media (max-width: 359.98px) {

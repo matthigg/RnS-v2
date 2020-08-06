@@ -13,7 +13,7 @@ $svg-icon-dimensions: calc(1rem + 0.5vw);
 }
 
 section.footer {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.87);
   display: grid;
   grid-auto-rows: minmax(0, auto);
   min-height: 25vh;
@@ -110,7 +110,7 @@ section.footer {
       &:hover {
         background-color: #f3d333;
         & i {
-          color: rgba(0, 0, 0, 0.75);
+          color: rgba(0, 0, 0, 0.87);
         }
       }
     }
