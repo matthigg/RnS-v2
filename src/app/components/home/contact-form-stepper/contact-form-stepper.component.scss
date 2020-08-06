@@ -16,6 +16,23 @@ mat-horizontal-stepper {
     display: flex;
     justify-content: space-between;
   }
+  & .services-error-wrapper {
+    height: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    & .services-error {
+      font-size: 85%;
+      font-weight: 400;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      top: -1rem;
+      &.show-error {
+        top: 0;
+        transition: 0.15s ease-out;
+      }
+    }
+  }
 }
 
 // ::ng-deep {

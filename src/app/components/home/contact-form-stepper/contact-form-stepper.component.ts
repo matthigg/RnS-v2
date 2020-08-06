@@ -5,7 +5,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ValidationErrors } fro
 import { BehaviorSubject } from 'rxjs';
 
 // Custom Form Validator
-export default function servicesValidator(formControl: FormControl) : { 'noSelectedService': true } | null {
+export default function servicesValidator(formControl: FormControl) : ValidationErrors | null {
   return formControl.value.length === 0 ? { 'noSelectedService': true } : null;
 }
 
@@ -15,7 +15,7 @@ export default function servicesValidator(formControl: FormControl) : { 'noSelec
   styleUrls: ['./contact-form-stepper.component.scss']
 })
 export class ContactFormStepperComponent implements OnInit {
-  servicesFormControlError: BehaviorSubject<{ [noSelectedService: string]: any } | null> = new BehaviorSubject(null);
+  servicesFormControlError: BehaviorSubject<ValidationErrors | null> = new BehaviorSubject(null);
 
   // Reactive Form, Step 1
   formGroupStep1: FormGroup;

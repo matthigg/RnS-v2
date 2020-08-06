@@ -86,12 +86,12 @@ mat-card {
       margin-bottom: 1rem;
       overflow: hidden;
       & .services-error {
-        font-size: 75%;
+        font-size: 85%;
         font-weight: 400;
         overflow: hidden;
         position: relative;
         text-align: center;
-        top: -10px;
+        top: -1rem;
         &.show-error {
           top: 0;
           transition: 0.15s ease-out;
