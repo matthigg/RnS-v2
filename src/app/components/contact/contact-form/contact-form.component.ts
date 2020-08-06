@@ -20,7 +20,7 @@ export default function servicesValidator(formControl: FormControl) : Validation
 })
 export class ContactFormComponent implements OnDestroy, OnInit {
   servicesFormControlError: BehaviorSubject<ValidationErrors | null> = new BehaviorSubject(null);
-  private subscriptions: Subscription = new Subscription();
+  private _subscriptions: Subscription = new Subscription();
 
   // Reactive Form
   contactForm = this.fb.group({
@@ -50,7 +50,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   ) { }
 
   ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
+    this._subscriptions.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -63,7 +63,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   }
 
   onSubmit(): void {
-    this.subscriptions.add(this.sendDataService.sendData(this.contactForm.value).subscribe(
+    this._subscriptions.add(this.sendDataService.sendData(this.contactForm.value).subscribe(
       response => !environment.production ? console.log('--- Contact Form API Response:', response) : null,
       error => !environment.production ? console.log('--- Contact Form API Error:', error) : null
     ));

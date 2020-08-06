@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, enableProdMode } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, ValidationErrors } from '@angular/forms';
 
 // RxJS
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
+
+// Environment Variables, Services
+import { environment } from 'src/environments/environment';
+import { SendDataService } from 'src/app/services/send-data.service';
 
 // Custom Form Validator
 export default function servicesValidator(formControl: FormControl) : ValidationErrors | null {
@@ -16,6 +20,7 @@ export default function servicesValidator(formControl: FormControl) : Validation
 })
 export class ContactFormStepperComponent implements OnInit {
   servicesFormControlError: BehaviorSubject<ValidationErrors | null> = new BehaviorSubject(null);
+  private _subscriptions: Subscription = new Subscription();
 
   // Reactive Form, Step 1
   formGroupStep1: FormGroup;
@@ -31,7 +36,10 @@ export class ContactFormStepperComponent implements OnInit {
   get services()  { return this.formGroupStep2.get('services'); }
   get message()   { return this.formGroupStep2.get('message'); }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private sendDataService: SendDataService,
+  ) { }
 
   ngOnInit(): void {
 
@@ -57,7 +65,12 @@ export class ContactFormStepperComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('--- this.formGroupStep1.value', this.formGroupStep1.value)
-    console.log('--- this.formGroupStep2.value', this.formGroupStep2.value)
+    let requestPayload = {};
+    Object.assign(requestPayload, this.formGroupStep1.value);
+    Object.assign(requestPayload, this.formGroupStep2.value);
+    this._subscriptions.add(this.sendDataService.sendData(requestPayload).subscribe(
+      response => !environment.production ? console.log('--- Contact Form API Response:', response) : null,
+      error => !environment.production ? console.log('--- Contact Form API Error:', error) : null
+    ));
   }
 }
