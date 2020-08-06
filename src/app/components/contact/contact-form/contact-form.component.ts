@@ -30,18 +30,16 @@ export class ContactFormComponent implements OnDestroy, OnInit {
     phone:            '',
     numberOfStories:  ['', Validators.required],
     typeOfExterior:   ['', Validators.required],
-    sqFtInput:        '',
-    sqFtSelect:       '',
+    address:          '',
     services:         ['', servicesValidator],
     message:          '',
   });
   get name()            { return this.contactForm.get('name'); }
   get email()           { return this.contactForm.get('email'); }
   get phone()           { return this.contactForm.get('phone'); }
+  get address()         { return this.contactForm.get('address'); }
   get numberOfStories() { return this.contactForm.get('numberOfStories'); }
   get typeOfExterior()  { return this.contactForm.get('typeOfExterior'); }
-  get sqFtInput()       { return this.contactForm.get('sqFtInput'); }
-  get sqFtSelect()      { return this.contactForm.get('sqFtSelect'); }
   get services()        { return this.contactForm.get('services'); }
   get message()         { return this.contactForm.get('message'); }
 

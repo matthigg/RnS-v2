@@ -1,11 +1,10 @@
 export interface ContactFormData {
-  email: string,
-  message: string,
   name: string,
-  numberOfStories: string,
+  email: string,
   phone: string,
-  services: string[],
-  sqFtInput: string,
-  sqFtSelect: string,
+  address: string,
+  numberOfStories: string,
   typeOfExterior: string,
+  services: string[],
+  message: string,
 }

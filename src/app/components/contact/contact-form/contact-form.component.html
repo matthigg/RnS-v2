@@ -32,6 +32,13 @@
         <mat-error *ngIf="phone.errors?.required">Please enter your phone number</mat-error>
       </mat-form-field>
 
+      <!-- Address -->
+      <mat-form-field class="form-field-address">
+        <mat-label>Address</mat-label>
+        <input formControlName="address" matInput type="text">
+        <mat-error *ngIf="address.errors?.required">Please enter the property address</mat-error>
+      </mat-form-field>
+
       <!-- Number of Stories -->
       <mat-form-field appearance="fill" class="form-field-number-of-stories">
         <mat-label>Number of stories *</mat-label>
@@ -55,27 +62,6 @@
           <mat-option value="Other">Other</mat-option>
         </mat-select>
         <mat-error *ngIf="typeOfExterior.errors?.required">Please enter the type of exterior</mat-error>
-      </mat-form-field>
-      
-      <!-- Square Footage -->
-      <mat-form-field class="form-field-sq-ft-input">
-        <mat-label>Approx. square footage (input field)</mat-label>
-        <input formControlName="sqFtInput" matInput type="text">
-        <mat-error *ngIf="sqFtInput.errors?.required">Please enter the approximate square footage</mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" class="form-field-sq-ft-select">
-        <mat-label>Approx. square footage (drop-down)</mat-label>
-        <mat-select formControlName="sqFtSelect">
-          <mat-option value="< 1000">< 1000</mat-option>
-          <mat-option value="1000 - 1500">1000 - 1500</mat-option>
-          <mat-option value="1500 - 2000">1500 - 2000</mat-option>
-          <mat-option value="2000 - 2500">2000 - 2500</mat-option>
-          <mat-option value="2500 - 3000">2500 - 3000</mat-option>
-          <mat-option value="3000 - 3000">3000 - 3500</mat-option>
-          <mat-option value="3000+">3500+</mat-option>
-        </mat-select>
-        <mat-error *ngIf="sqFtSelect.errors?.required">Please enter the approximate square footage</mat-error>
       </mat-form-field>
 
       <!-- Services -->
@@ -103,7 +89,7 @@
       </div>
 
       <!-- Message -->
-      <mat-form-field appearance="outline" class="textarea-form-field">
+      <mat-form-field appearance="outline" class="form-field-textarea">
         <mat-label>Send us a message</mat-label>
         <textarea formControlName="message" matInput></textarea>
         <mat-error *ngIf="message.errors?.required">Please enter a message</mat-error>

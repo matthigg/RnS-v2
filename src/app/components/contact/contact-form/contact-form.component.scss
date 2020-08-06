@@ -1,11 +1,3 @@
-.form-field-email { grid-area: ffemal; }
-.form-field-name { grid-area: ffname; }
-.form-field-number-of-stories { grid-area: ffnmst; }
-.form-field-phone { grid-area: ffphon; }
-.form-field-sq-ft-input { grid-area: ffsqfi; }
-.form-field-sq-ft-select { grid-area: ffsqfs; }
-.form-field-type-of-exterior { grid-area: fftpex; }
-
 mat-card {
   border: 1px solid rgba(0, 0, 0, 0.54);
   & mat-card-actions:last-child {
@@ -30,10 +22,9 @@ mat-card {
         'ffname'
         'ffemal'
         'ffphon'
+        'ffaddr'
         'ffnmst'
         'fftpex'
-        'ffsqfi'
-        'ffsqfs'
         'svcwrp'
         'fftxta';
       grid-template-columns: 1fr;
@@ -43,10 +34,9 @@ mat-card {
       'ffname svcwrp'
       'ffemal svcwrp'
       'ffphon svcwrp'
+      'ffaddr svcwrp'
       'ffnmst svcwrp'
       'fftpex svcwrp'
-      'ffsqfi svcwrp'
-      'ffsqfs svcwrp'
       'fftxta fftxta';
       grid-template-columns: 1fr 1fr;
     }
@@ -60,13 +50,19 @@ mat-card {
   }
   & mat-form-field {
     width: 100%;
-    &.textarea-form-field {
+    &.form-field-textarea {
       grid-area: fftxta;
       margin-top: 1rem;
       & textarea {
         min-height: 2rem;
       }
     }
+    & .form-field-email { grid-area: ffemal; }
+    & .form-field-name { grid-area: ffname; }
+    & .form-field-phone { grid-area: ffphon; }
+    & .form-field-address { grid-area: ffaddr; }
+    & .form-field-number-of-stories { grid-area: ffnmst; }
+    & .form-field-type-of-exterior { grid-area: fftpex; }
   }
   & .services-wrapper {
     grid-area: svcwrp;

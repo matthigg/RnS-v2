@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
 
 // Environment Variables, Services
+import { ContactFormData } from 'src/app/shared/models/contact-form-data';
 import { environment } from 'src/environments/environment';
 import { SendDataService } from 'src/app/services/send-data.service';
 
@@ -67,9 +68,10 @@ export class ContactFormStepperComponent implements OnInit {
   }
 
   onSubmit(): void {
-    let requestPayload = {};
+    let requestPayload: ContactFormData | {} = {};
     Object.assign(requestPayload, this.formGroupStep1.value);
     Object.assign(requestPayload, this.formGroupStep2.value);
+    // this._subscriptions.add(this.sendDataService.sendData(requestPayload).subscribe(
     this._subscriptions.add(this.sendDataService.sendData(requestPayload).subscribe(
       response => {
         !environment.production ? console.log('--- Contact Form API Response:', response) : null;
