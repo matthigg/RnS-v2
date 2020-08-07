@@ -17,31 +17,31 @@
         <mat-error *ngIf="name.errors?.required">Please enter your name</mat-error>
       </mat-form-field>
 
-      <!-- Email -->
-      <mat-form-field class="form-field-email">
-        <mat-label>Email *</mat-label>
-        <input formControlName="email" matInput type="text">
-        <mat-error *ngIf="email.errors?.required">Please enter an email address</mat-error>
-        <mat-error *ngIf="email.errors?.email">Please enter a valid email address</mat-error>
-      </mat-form-field>
-
       <!-- Phone -->
       <mat-form-field class="form-field-phone">
-        <mat-label>Phone</mat-label>
+        <mat-label>Phone *</mat-label>
         <input formControlName="phone" matInput type="tel">
         <mat-error *ngIf="phone.errors?.required">Please enter your phone number</mat-error>
       </mat-form-field>
 
       <!-- Address -->
       <mat-form-field class="form-field-address">
-        <mat-label>Address</mat-label>
+        <mat-label>Address *</mat-label>
         <input formControlName="address" matInput type="text">
         <mat-error *ngIf="address.errors?.required">Please enter the property address</mat-error>
       </mat-form-field>
 
+      <!-- Email -->
+      <mat-form-field class="form-field-email">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput type="text">
+        <mat-error *ngIf="email.errors?.required">Please enter an email address</mat-error>
+        <mat-error *ngIf="email.errors?.email">Please enter a valid email address</mat-error>
+      </mat-form-field>
+
       <!-- Number of Stories -->
       <mat-form-field appearance="fill" class="form-field-number-of-stories">
-        <mat-label>Number of stories *</mat-label>
+        <mat-label>Number of stories</mat-label>
         <mat-select formControlName="numberOfStories" >
           <mat-option value="1">1</mat-option>
           <mat-option value="2">2</mat-option>
@@ -53,7 +53,7 @@
 
       <!-- Type of Exterior -->
       <mat-form-field appearance="fill" class="form-field-type-of-exterior">
-        <mat-label>Type of exterior *</mat-label>
+        <mat-label>Type of exterior</mat-label>
         <mat-select formControlName="typeOfExterior">
           <mat-option value="Vinyl">Vinyl</mat-option>
           <mat-option value="Wood">Wood</mat-option>

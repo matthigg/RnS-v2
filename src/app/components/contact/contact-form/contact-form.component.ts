@@ -26,11 +26,11 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   // Reactive Form
   contactForm = this.fb.group({
     name:             ['', Validators.required],
-    email:            ['', [Validators.required, Validators.email]],
-    phone:            '',
-    numberOfStories:  ['', Validators.required],
-    typeOfExterior:   ['', Validators.required],
-    address:          '',
+    phone:            ['', Validators.required],
+    email:            '',
+    address:          ['', Validators.required],
+    numberOfStories:  '',
+    typeOfExterior:   '',
     services:         ['', servicesValidator],
     message:          '',
   });
