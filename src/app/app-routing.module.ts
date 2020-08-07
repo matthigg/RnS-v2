@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FenceCleaningComponent } from './components/our-services/service-components/fence-cleaning/fence-cleaning.component';
-import { SurfaceCleaningComponent } from './components/our-services/service-components/surface-cleaning/surface-cleaning.component';
+import { ConcreteCleaningComponent } from './components/our-services/service-components/concrete-cleaning/concrete-cleaning.component';
 import { SoftWashComponent } from './components/our-services/service-components/soft-wash/soft-wash.component';
 import { OutdoorStainRemovalComponent } from './components/our-services/service-components/outdoor-stain-removal/outdoor-stain-removal.component';
 import { DeckCleaningAndRestorationComponent } from './components/our-services/service-components/deck-cleaning-and-restoration/deck-cleaning-and-restoration.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'about',      component: AboutComponent },
   { path: 'services',   component: ServicesComponent },
   { path: 'services/fence-cleaning',                component: FenceCleaningComponent },
-  { path: 'services/surface-cleaning',              component: SurfaceCleaningComponent },
+  { path: 'services/concrete-cleaning',             component: ConcreteCleaningComponent },
   { path: 'services/soft-wash',                     component: SoftWashComponent },
   { path: 'services/outdoor-stain-removal',         component: OutdoorStainRemovalComponent },
   { path: 'services/deck-cleaning-and-restoration', component: DeckCleaningAndRestorationComponent },
