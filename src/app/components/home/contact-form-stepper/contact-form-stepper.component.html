@@ -1,4 +1,4 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper class="dark-theme">
+<mat-horizontal-stepper [linear]="true" #stepper class="dark-theme">
 
   <!-- Step 1 -->
   <mat-step [stepControl]="formGroupStep1">
@@ -103,7 +103,13 @@
       <!-- Buttons -->
       <div class="buttons-wrapper-step-2">
         <button mat-button matStepperPrevious type="button">Back</button>
-        <button mat-button type="submit">Submit</button>
+        <button 
+          #submitButton
+          mat-raised-button 
+          type="submit"
+          [disabled]="formGroupStep1.invalid || formGroupStep2.invalid">
+          Get Your Free Estimate!
+        </button>
       </div>
     </form>
   </mat-step>
