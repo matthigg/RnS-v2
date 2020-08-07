@@ -27,8 +27,8 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   contactForm = this.fb.group({
     name:             ['', Validators.required],
     phone:            ['', Validators.required],
-    email:            '',
     address:          ['', Validators.required],
+    email:            '',
     numberOfStories:  '',
     typeOfExterior:   '',
     services:         ['', servicesValidator],

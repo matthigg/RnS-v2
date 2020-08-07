@@ -48,11 +48,11 @@ export class ContactFormStepperComponent implements OnInit {
 
     this.formGroupStep1 = this.fb.group({
       name:             ['', Validators.required],
-      email:            ['', [Validators.required, Validators.email]],
-      phone:            '',
-      address:          '',
-      numberOfStories:  ['', Validators.required],
-      typeOfExterior:   ['', Validators.required],
+      phone:            ['', Validators.required],
+      address:          ['', Validators.required],
+      email:            '',
+      numberOfStories:  '',
+      typeOfExterior:   '',
     });
 
     this.formGroupStep2 = this.fb.group({
