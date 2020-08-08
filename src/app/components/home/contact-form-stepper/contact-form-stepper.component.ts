@@ -1,6 +1,9 @@
-import { Component, OnInit, enableProdMode } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, enableProdMode } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
+
+// Angular Animations
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 // RxJS
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -18,10 +21,24 @@ export default function servicesValidator(formControl: FormControl) : Validation
 @Component({
   selector: 'app-contact-form-stepper',
   templateUrl: './contact-form-stepper.component.html',
-  styleUrls: ['./contact-form-stepper.component.scss']
+  styleUrls: ['./contact-form-stepper.component.scss'],
+  animations: [
+    trigger('slideRight', [
+      state('stationary', style({
+        left: '-15rem',
+        opacity: '0.5',
+      })),
+      state('slide-right', style({
+        left: '-14rem',
+        opacity: '1',
+      })),
+      transition('stationary => slide-right', [ animate('0.5s ease-in') ])
+    ])
+  ]
 })
-export class ContactFormStepperComponent implements OnInit {
+export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, OnInit {
   servicesFormControlError: BehaviorSubject<ValidationErrors | null> = new BehaviorSubject(null);
+  slideRight: boolean = false;
   private _subscriptions: Subscription = new Subscription();
 
   // Reactive Form, Step 1
@@ -44,6 +61,14 @@ export class ContactFormStepperComponent implements OnInit {
     private sendDataService: SendDataService,
   ) { }
 
+  ngAfterViewInit(): void {
+    this.slideRight = true;
+  }
+
+  ngOnDestroy(): void {
+    this._subscriptions.unsubscribe();
+  }
+
   ngOnInit(): void {
 
     this.formGroupStep1 = this.fb.group({
@@ -62,6 +87,7 @@ export class ContactFormStepperComponent implements OnInit {
   }
 
   onClickService(): void {
+    this.slideRight = true;
     setTimeout(_ => {
       this.servicesFormControlError.next(this.formGroupStep2.controls.services.errors);
     });
