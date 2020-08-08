@@ -1,7 +1,10 @@
 <!-- Section - Landing Page -->
 <section class="section-landing-page">
   <!-- <div class="landing-page-spacer"></div> -->
-  <app-contact-form-stepper></app-contact-form-stepper>
+  <app-contact-form-stepper *ngIf="
+    windowSize.height >= 700 
+    && windowSize.width >= 768">
+  </app-contact-form-stepper>
 </section>
 
 <!-- Landing Page Footer Toolbar -->

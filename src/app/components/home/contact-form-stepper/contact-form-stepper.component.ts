@@ -26,13 +26,13 @@ export default function servicesValidator(formControl: FormControl) : Validation
     trigger('slideRight', [
       state('stationary', style({
         left: '-15rem',
-        opacity: '0.5',
+        opacity: '0',
       })),
       state('slide-right', style({
         left: '-14rem',
         opacity: '1',
       })),
-      transition('stationary => slide-right', [ animate('0.5s ease-in') ])
+      transition('stationary => slide-right', [ animate('0.35s ease-in') ])
     ])
   ]
 })
@@ -62,7 +62,7 @@ export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, On
   ) { }
 
   ngAfterViewInit(): void {
-    this.slideRight = true;
+    setTimeout(_ => this.slideRight = true);
   }
 
   ngOnDestroy(): void {

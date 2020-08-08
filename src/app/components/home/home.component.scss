@@ -44,13 +44,8 @@ mat-toolbar {
   & app-contact-form-stepper {
     margin-right: 2rem;
     position: relative;
+    top: calc(2 * 64px);
     width: 35vw;
-    @media (max-width: 599.98px) {
-      top: calc(2 * 56px);
-    }
-    @media (min-width: 600px) {
-      top: calc(2 * 64px);
-    }
   }
 }
 
