@@ -36,9 +36,12 @@ mat-toolbar {
   display: flex;
   justify-content: flex-end;
   @media (max-width: 599.98px) {
-    min-height: calc(100vh - 56px);
+    min-height: calc(100vh - 56px - 56px);
   }
-  @media (min-width: 600px) {
+  @media (min-width: 600px) and (max-width: 767.98px) {
+    min-height: calc(100vh - 64px - 64px);
+  }
+  @media (min-width: 768px) {
     min-height: calc(100vh - 64px);
   }
   & app-contact-form-stepper {
