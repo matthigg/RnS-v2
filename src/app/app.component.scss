@@ -5,11 +5,8 @@ mat-sidenav-container {
   height: 100%;
   & .background-image {
     background-color: #020305;
-    // background-position: center;
-    // background-position
     background-size: cover;
     height: 100vh;
-    // left: 0;
     position: fixed;
     width: 100%;
     z-index: -1;
@@ -36,6 +33,9 @@ mat-sidenav-container {
     }
     @media (min-width: 600px) {
       top: -2rem;
+    }
+    @media (max-width: 767.98px) {
+      background-position: center;
     }
   }
   & .background-image.final-image.show-image {
