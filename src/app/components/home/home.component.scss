@@ -1,4 +1,12 @@
 $mat-card-transition: 0.25s ease-in-out;
+$off-white: rgba(255, 255, 255, 0.87);
+$svg-icon-dimensions: calc(1rem + 0.5vw);
+%svg-icon-attributes {
+  height: $svg-icon-dimensions;
+  margin-right: 0.5rem;
+  width: $svg-icon-dimensions;
+}
+
 
 .landing-page-spacer {
   height: calc(100vh - 128px);
@@ -49,6 +57,49 @@ mat-toolbar {
     position: relative;
     top: calc(2 * 64px);
     width: 35vw;
+  }
+  & .mobile-landing-page-text {
+    background-color: rgba(0, 0, 0, 0.87);
+    color: #fafafa;
+    height: max-content;
+    margin-top: calc(56px + 15vh);
+    padding-top: 0.5rem;
+    width: 100%;
+    & h1 {
+      color: #f3d333;
+      font-family: 'Stencil';
+      margin: 0;
+      text-align: center;
+    }
+    & h2 {
+      color: #fafafa;
+      font-size: 1rem;
+      margin: 0;
+      text-align: center;
+    }
+    & p {
+      padding-left: 1rem;
+    }
+    ::ng-deep li {
+      color: $off-white;
+      & .svg-email {
+        fill: $off-white !important;
+        @extend %svg-icon-attributes;
+      }
+      & .svg-hours-of-operation {
+        fill: none;
+        stroke: $off-white !important;
+        @extend %svg-icon-attributes;
+      }
+      & .svg-phone {
+        fill: $off-white !important;
+        @extend %svg-icon-attributes;
+      }
+      & .svg-location-marker {
+        fill: $off-white !important;
+        @extend %svg-icon-attributes;
+      }
+    }
   }
 }
 

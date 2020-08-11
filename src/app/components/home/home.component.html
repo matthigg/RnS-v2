@@ -5,6 +5,19 @@
     windowSize.height >= 700 
     && windowSize.width >= 768">
   </app-contact-form-stepper>
+
+  <div class="mobile-landing-page-text" *ngIf="windowSize.width < 768">
+    <h1>RESTORE & SHINE</h1>
+    <h2>Pressure Washing</h2>
+    <p>
+      &nbsp;•&nbsp; Soft Wash <br>
+      &nbsp;•&nbsp; Surface Cleaning <br>
+      &nbsp;•&nbsp; Outdoor Stain Removal <br> 
+      &nbsp;•&nbsp; Deck Cleaning & Restoration <br>
+      &nbsp;•&nbsp; Fence Cleaning <br>
+    </p>
+    <app-contact-info></app-contact-info>
+  </div>
 </section>
 
 <!-- Landing Page Footer Toolbar -->
