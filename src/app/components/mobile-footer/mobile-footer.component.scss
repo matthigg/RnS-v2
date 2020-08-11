@@ -1,3 +1,5 @@
+$button-hover-transition: all 0.2s ease-in;
+
 .footer-buttons-wrapper {
   align-items: center;
   background-color: #333;
@@ -8,15 +10,27 @@
   position: fixed;
   z-index: 2;
   & button {
+    color: #fafafa;
+    transition: $button-hover-transition;
     &.free-estimate {
       border-radius: 0.5rem;
       border: 2px solid #fafafa;
     }
     & .svg-phone {
       fill: #fafafa;
-      height: 2rem;
+      height: 1.5rem;
       margin-right: 0.25rem;
-      width: 2rem;
+      width: 1.5rem;
+      
+    }
+    &:hover {
+      background-color: #f3d333;
+      color: #333;
+      transition: $button-hover-transition;
+      & .svg-phone {
+        fill: #333;
+        transition: $button-hover-transition;
+      }
     }
   }
 }
