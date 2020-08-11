@@ -1,0 +1,22 @@
+.footer-buttons-wrapper {
+  align-items: center;
+  background-color: #333;
+  bottom: 0;
+  color: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  z-index: 2;
+  & button {
+    &.free-estimate {
+      border-radius: 0.5rem;
+      border: 2px solid #fafafa;
+    }
+    & .svg-phone {
+      fill: #fafafa;
+      height: 2rem;
+      margin-right: 0.25rem;
+      width: 2rem;
+    }
+  }
+}
