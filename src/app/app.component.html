@@ -42,7 +42,7 @@
       'final-image': true,
       'show-image': fadeInBackgroundImage
     }"></div>
-    <app-nav-toolbar (openDrawer)="open($event)"></app-nav-toolbar>
+    <app-nav-toolbar (openDrawer)="open()"></app-nav-toolbar>
     <!-- <div class="nav-toolbar-spacer"></div> -->
     <router-outlet></router-outlet>
     <app-mobile-footer *ngIf="windowSize.width < 768"></app-mobile-footer>

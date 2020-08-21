@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ValidationErrors } fro
 import { Router } from '@angular/router';
 
 // Angular Animations
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, sequence, state, style, animate, transition } from '@angular/animations';
 
 // RxJS
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -19,7 +19,7 @@ export default function servicesValidator(formControl: FormControl) : Validation
 }
 
 // Animation Variables
-const animationTime = '0.25s ease-in';
+const animationTime = '0.5s ease-out';
 
 @Component({
   selector: 'app-contact-form-stepper',
@@ -27,9 +27,14 @@ const animationTime = '0.25s ease-in';
   styleUrls: ['./contact-form-stepper.component.scss'],
   animations: [
     trigger('slideRight', [
-      state('stationary', style({ left: '-15rem', opacity: '0' })),
-      state('slide-right', style({ left: '-14rem', opacity: '1' })),
-      transition('stationary => slide-right', [ animate(`${animationTime}`) ]),
+      state('stationary', style({ left: '-240px', opacity: '0' })),
+      state('slide-right', style({ left: '-224px', opacity: '1' })),
+      transition('stationary => slide-right', [ 
+        sequence([
+          animate('0.25s', style({ opacity: 0 })),
+          animate(`${animationTime}`)
+        ]),
+      ]),
     ]),
     trigger('fadeIn', [
       state('hide', style({ opacity: 0 })),
