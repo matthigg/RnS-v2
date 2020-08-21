@@ -101,7 +101,7 @@ import { MobileFooterComponent } from './components/mobile-footer/mobile-footer.
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(overlayContainer: OverlayContainer) {
-    overlayContainer.getContainerElement().classList.add('dark-theme')
-  }
+  // constructor(overlayContainer: OverlayContainer) {
+  //   overlayContainer.getContainerElement().classList.add('dark-theme')
+  // }
 }

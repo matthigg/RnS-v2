@@ -1,5 +1,7 @@
 <!-- Contact Form Stepper Sign -->
-<div class="sign-wrapper" [@slideRight]="animationSlideRight || viewed ? 'slide-right' : 'stationary'">
+<div 
+  class="sign-wrapper" 
+  [@slideRight]="animationSlideRight || viewed ? 'slide-right' : 'stationary'">
   Get A Free Estimate
   <svg class="svg-right-arrow">
     <use href=#svg-right-arrow></use>
@@ -8,8 +10,9 @@
 
 <!-- Contact Form Stepper -->
 <mat-horizontal-stepper 
+  class="dark-theme"
   [linear]="true" 
-  #stepper class="dark-theme"
+  #stepper
   [@fadeIn]="animationFadeIn || viewed ? 'show' : 'hide'">
 
   <!-- Step 1 -->
