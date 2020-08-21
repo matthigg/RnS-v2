@@ -18,27 +18,30 @@ export default function servicesValidator(formControl: FormControl) : Validation
   return formControl.value.length === 0 ? { 'noSelectedService': true } : null;
 }
 
+// Animation Variables
+const animationTime = '0.25s ease-in';
+
 @Component({
   selector: 'app-contact-form-stepper',
   templateUrl: './contact-form-stepper.component.html',
   styleUrls: ['./contact-form-stepper.component.scss'],
   animations: [
     trigger('slideRight', [
-      state('stationary', style({
-        left: '-15rem',
-        opacity: '0',
-      })),
-      state('slide-right', style({
-        left: '-14rem',
-        opacity: '1',
-      })),
-      transition('stationary => slide-right', [ animate('0.35s ease-in') ])
-    ])
-  ]
+      state('stationary', style({ left: '-15rem', opacity: '0' })),
+      state('slide-right', style({ left: '-14rem', opacity: '1' })),
+      transition('stationary => slide-right', [ animate(`${animationTime}`) ]),
+    ]),
+    trigger('fadeIn', [
+      state('hide', style({ opacity: 0 })),
+      state('show', style({ opacity: 1 })),
+      transition('hide => show', [ animate(`${animationTime}`) ]),
+    ]),
+  ],
 })
 export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, OnInit {
+  animationFadeIn: boolean = false;
+  animationSlideRight: boolean = false;
   servicesFormControlError: BehaviorSubject<ValidationErrors | null> = new BehaviorSubject(null);
-  slideRight: boolean = false;
   private _subscriptions: Subscription = new Subscription();
 
   // Reactive Form, Step 1
@@ -62,7 +65,8 @@ export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, On
   ) { }
 
   ngAfterViewInit(): void {
-    setTimeout(_ => this.slideRight = true);
+    setTimeout(_ => this.animationFadeIn = true);
+    setTimeout(_ => this.animationSlideRight = true);
   }
 
   ngOnDestroy(): void {
@@ -87,7 +91,6 @@ export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, On
   }
 
   onClickService(): void {
-    this.slideRight = true;
     setTimeout(_ => {
       this.servicesFormControlError.next(this.formGroupStep2.controls.services.errors);
     });
