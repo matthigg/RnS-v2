@@ -12,6 +12,7 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 import { ContactFormData } from 'src/app/shared/models/contact-form-data';
 import { environment } from 'src/environments/environment';
 import { SendDataService } from 'src/app/services/send-data.service';
+import { TrackViewsService } from 'src/app/services/track-views.service';
 
 // Custom Form Validator
 export default function servicesValidator(formControl: FormControl) : ValidationErrors | null {
@@ -31,8 +32,8 @@ const animationTime = '0.5s ease-out';
       state('slide-right', style({ left: '-224px', opacity: '1' })),
       transition('stationary => slide-right', [ 
         sequence([
-          animate('0.25s', style({ opacity: 0 })),
-          animate(`${animationTime}`)
+          animate('0.2s', style({ opacity: 0 })),
+          animate(`${animationTime}`),
         ]),
       ]),
     ]),
@@ -46,6 +47,7 @@ const animationTime = '0.5s ease-out';
 export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, OnInit {
   animationFadeIn: boolean = false;
   animationSlideRight: boolean = false;
+  viewed: boolean = this.trackViewsService.hasBeenViewed.has('contact-form-stepper');
   servicesFormControlError: BehaviorSubject<ValidationErrors | null> = new BehaviorSubject(null);
   private _subscriptions: Subscription = new Subscription();
 
@@ -64,14 +66,16 @@ export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, On
   get message()   { return this.formGroupStep2.get('message'); }
 
   constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private sendDataService: SendDataService,
+    private _fb: FormBuilder,
+    private _router: Router,
+    private _sendDataService: SendDataService,
+    public trackViewsService: TrackViewsService,
   ) { }
 
   ngAfterViewInit(): void {
     setTimeout(_ => this.animationFadeIn = true);
     setTimeout(_ => this.animationSlideRight = true);
+    if (!this.viewed) this.trackViewsService.hasBeenViewed.add('contact-form-stepper');
   }
 
   ngOnDestroy(): void {
@@ -80,7 +84,7 @@ export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, On
 
   ngOnInit(): void {
 
-    this.formGroupStep1 = this.fb.group({
+    this.formGroupStep1 = this._fb.group({
       name:             ['', Validators.required],
       phone:            ['', Validators.required],
       address:          ['', Validators.required],
@@ -89,7 +93,7 @@ export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, On
       typeOfExterior:   '',
     });
 
-    this.formGroupStep2 = this.fb.group({
+    this.formGroupStep2 = this._fb.group({
       services: ['', servicesValidator],
       message:  '',
     });
@@ -105,10 +109,10 @@ export class ContactFormStepperComponent implements AfterViewInit, OnDestroy, On
     let requestPayload: ContactFormData | {} = {};
     Object.assign(requestPayload, this.formGroupStep1.value);
     Object.assign(requestPayload, this.formGroupStep2.value);
-    this._subscriptions.add(this.sendDataService.sendData((requestPayload as ContactFormData)).subscribe(
+    this._subscriptions.add(this._sendDataService.sendData((requestPayload as ContactFormData)).subscribe(
       response => {
         !environment.production ? console.log('--- Contact Form API Response:', response) : null;
-        this.router.navigate(['thank-you']);
+        this._router.navigate(['thank-you']);
       },
       error => !environment.production ? console.log('--- Contact Form API Error:', error) : null
     ));
