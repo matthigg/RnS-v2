@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PictureDialogComponent } from './picture-dialog.component';
 
@@ -6,7 +6,7 @@ describe('PictureDialogComponent', () => {
   let component: PictureDialogComponent;
   let fixture: ComponentFixture<PictureDialogComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PictureDialogComponent ]
     })

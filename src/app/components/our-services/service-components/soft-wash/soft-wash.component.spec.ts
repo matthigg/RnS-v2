@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SoftWashComponent } from './soft-wash.component';
 
@@ -6,7 +6,7 @@ describe('SoftWashComponent', () => {
   let component: SoftWashComponent;
   let fixture: ComponentFixture<SoftWashComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SoftWashComponent ]
     })
