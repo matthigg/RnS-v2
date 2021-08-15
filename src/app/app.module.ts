@@ -25,13 +25,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 // Components
 import { AboutComponent } from './components/about/about.component';
 import { AppComponent } from './app.component';
+import { ConcreteCleaningComponent } from './components/our-services/service-components/concrete-cleaning/concrete-cleaning.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
+import { ContactFormStepperComponent } from './components/home/contact-form-stepper/contact-form-stepper.component';
 import { ContactInfoComponent } from './components/contact/contact-info/contact-info.component';
 import { DeckCleaningAndRestorationComponent } from './components/our-services/service-components/deck-cleaning-and-restoration/deck-cleaning-and-restoration.component';
 import { FenceCleaningComponent } from './components/our-services/service-components/fence-cleaning/fence-cleaning.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { MobileFooterComponent } from './components/mobile-footer/mobile-footer.component';
 import { NavToolbarComponent } from './components/nav-toolbar/nav-toolbar.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { OutdoorStainRemovalComponent } from './components/our-services/service-components/outdoor-stain-removal/outdoor-stain-removal.component';
@@ -41,13 +44,10 @@ import { ServicesComponent } from './components/our-services/services.component'
 import { SoftWashComponent } from './components/our-services/service-components/soft-wash/soft-wash.component';
 import { SvgSpriteSheetComponent } from './components/svg-sprite-sheet/svg-sprite-sheet.component';
 import { SurfaceCleaningComponent } from './components/our-services/service-components/surface-cleaning/surface-cleaning.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 // Pipes
 import { ConsoleLogPipe } from './shared/pipes/console-log.pipe';
-import { ContactFormStepperComponent } from './components/home/contact-form-stepper/contact-form-stepper.component';
-import { ThankYouComponent } from './components/thank-you/thank-you.component';
-import { ConcreteCleaningComponent } from './components/our-services/service-components/concrete-cleaning/concrete-cleaning.component';
-import { MobileFooterComponent } from './components/mobile-footer/mobile-footer.component';
 
 @NgModule({
   declarations: [
